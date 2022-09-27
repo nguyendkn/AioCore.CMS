@@ -1,0 +1,12 @@
+{
+  "name": "aioc",
+  "scripts": {
+    "build:scss": "npx sass wwwroot/scss/app.scss wwwroot/css/app.css"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  }
+}

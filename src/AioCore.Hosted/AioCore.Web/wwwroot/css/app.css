@@ -1,0 +1,89 @@
+* {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #202124;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+html body.app {
+  margin: 0;
+}
+html body.app .wrapper {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+html body.app header {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+html body.app header .header-bot {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+html body.app header .header-bot .search-form {
+  margin-left: auto;
+  position: relative;
+  width: 268px;
+}
+html body.app header .header-bot .search-form button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 9px;
+  right: 14px;
+  padding: 0;
+  font-size: 16px;
+}
+html body.app header .navigation {
+  position: relative;
+  border-bottom: 3px solid #008837;
+  border-top: 1px solid rgba(108, 110, 112, 0.1);
+}
+html body.app header .navigation .navigation-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+html body.app header .navigation .navigation-bar .navigation-item {
+  flex-shrink: 0;
+}
+input {
+  color: #333;
+}
+
+input[type=text] {
+  border: solid 0.5px #efefef;
+  background-color: #f9f9f9;
+  padding: 6px 30px 6px 15px;
+  line-height: 33px;
+  height: 33px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  border-radius: 30px;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -6,13 +6,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
-    </ItemGroup>
+    <Target Name="BuildScss" BeforeTargets="Compile">
+        <Exec Command="npm run build:scss" />
+    </Target>
 
     <ItemGroup>
       <ProjectReference Include="..\..\AioCore.Services\AioCore.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\css" />
     </ItemGroup>
 
 </Project>
