@@ -16,7 +16,7 @@ html body.app {
   margin: 0;
 }
 html body.app .wrapper {
-  max-width: 980px;
+  max-width: 1130px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -34,10 +34,25 @@ html body.app header .header-bot {
   margin-top: 25px;
   margin-bottom: 0;
 }
+html body.app header .header-bot .logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 html body.app header .header-bot .search-form {
   margin-left: auto;
   position: relative;
   width: 268px;
+}
+html body.app header .header-bot .search-form input {
+  border: solid 0.5px #efefef;
+  background-color: #f9f9f9;
+  padding: 6px 15px;
+  line-height: 33px;
+  height: 25px;
+  font-size: 13px;
+  outline: none;
+  width: 87%;
+  border-radius: 30px;
 }
 html body.app header .header-bot .search-form button {
   background: transparent;
@@ -61,24 +76,700 @@ html body.app header .navigation .navigation-bar {
 html body.app header .navigation .navigation-bar .navigation-item {
   flex-shrink: 0;
 }
+html body.app header .navigation .navigation-bar .navigation-item .title {
+  display: block;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c6e70;
+  position: relative;
+  line-height: 38px;
+  text-transform: capitalize;
+}
+html body.app header .navigation .navigation-bar .navigation-item .title.active {
+  color: #008837;
+  background-color: rgba(108, 110, 112, 0.1);
+}
+html body.app header .navigation .navigation-bar .navigation-item .title:hover {
+  color: #008837;
+  background-color: rgba(108, 110, 112, 0.1);
+}
+html body.app header .navigation .navigation-bar .navigation-expand {
+  margin-left: auto;
+  font-weight: 500;
+  color: #fff;
+  font-size: 0;
+  text-align: center;
+  cursor: pointer;
+  width: 20px;
+  height: 15px;
+  display: inline-block;
+}
+html body.app header .ads {
+  padding: 15px 0;
+  background: rgba(243, 243, 243, 0.31);
+}
+html body.app .main {
+  margin-bottom: 45px;
+  margin-top: 15px;
+}
+html body.app .main .grid.highlight {
+  display: grid;
+  grid-template-columns: calc(100% - 341px) 300px;
+  grid-gap: 41px;
+}
+html body.app .main .grid.highlight .article.highlight {
+  position: relative;
+}
+html body.app .main .grid.highlight .article.highlight::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 535px;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #eee;
+}
+html body.app .main .grid.highlight .article.highlight::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+html body.app .main .grid.highlight .article.highlight .article-item:not(:nth-child(1)) {
+  float: left;
+  width: calc(100% - 555px);
+}
+html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) {
+  float: right;
+  width: 514px;
+}
+html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-title {
+  font-size: 24px;
+  line-height: 34px;
+}
+html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-title.text-ico a::before {
+  top: -4px;
+}
+html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-excerpt {
+  margin-top: 12px;
+}
+html body.app .main .grid.highlight .article.highlight .article-item:nth-child(3) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+html body.app .main .grid.highlight .article.highlight .article-title {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 12px 0 0;
+}
+html body.app .main .grid.highlight .article.special {
+  position: relative;
+}
+html body.app .main .grid.highlight .article.special::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -21px;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #eee;
+}
+html body.app .main .grid.highlight .article.special .article-item:not(:nth-child(1)) {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container {
+  grid-template-columns: calc(100% - 140px) 120px;
+  grid-gap: 20px;
+  row-gap: 10px;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-category a {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #bd975f;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-avatar {
+  display: unset;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-avatar a {
+  justify-content: center;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-avatar a i {
+  width: 88px;
+  height: 88px;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-comment {
+  justify-content: start;
+  align-items: unset;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-comment svg {
+  margin: 0 10px 0 0;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-author {
+  width: 100%;
+  text-align: center;
+  color: #25282b;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-author .author-name {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #25282b;
+}
+html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-author .author-title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #828282;
+}
+html body.app .main .grid.highlight .article.special .article-container {
+  display: grid;
+  grid-template-columns: calc(100% - 104px) 88px;
+  grid-gap: 16px;
+}
+html body.app .main .grid.highlight .article.special .article-category {
+  margin: 0 0 10px 0;
+}
+html body.app .main .grid.highlight .article.special .article-category a {
+  line-height: 0;
+}
+html body.app .main .grid.highlight .article.special .article-title {
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+}
+html body.app .main .grid.highlight .article.special .article-meta {
+  margin: 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+}
+html body.app .main .grid.highlight .article.special .article-avatar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -4px -2px 0;
+  align-items: center;
+  justify-content: center;
+}
+html body.app .main .grid.highlight .article.special .article-avatar a {
+  margin: 4px 0 0;
+  flex: 0 0 auto;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+}
+html body.app .main .grid.highlight .article.special .article-avatar i {
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent url(https://cdnweb.dantri.com.vn/dist/b474c6ca2d1abee5b89b.png) no-repeat center/100% 100%;
+}
+html body.app .main .grid.highlight .article.special .article-avatar.multi a {
+  width: 50%;
+}
+html body.app .main .grid.highlight .article.special .article-avatar.multi i {
+  width: 36px;
+  height: 36px;
+}
+html body.app .main .grid.highlight .article.special .article-comment {
+  color: #28af4c;
+}
+html body.app .main .grid.highlight .article.grid {
+  display: grid;
+  grid-template-columns: calc(100% - 293px) 252px;
+  grid-row-gap: 20px;
+  grid-column-gap: 41px;
+  position: relative;
+}
+html body.app .main .grid.highlight .article.grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 273px;
+  display: block;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #eee;
+}
+html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) .article-content {
+  margin: 14px 0 0;
+}
+html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) .article-title {
+  margin: 0;
+  font-size: 21px;
+  line-height: 30px;
+}
+html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) .article-excerpt {
+  margin: 9px 0 0;
+}
+html body.app .main .grid.highlight .article.grid .article-item:not(:nth-child(1)) .article-title {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+html body.app .main .grid.highlight .article.column {
+  margin: 20px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #eee;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 22px;
+}
+html body.app .main .grid.highlight .article.column .article-title {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+html body.app .main .grid.normal {
+  margin: 22px 0 0;
+  padding: 32px 0 0;
+  border-top: 1px solid #eee;
+  display: grid;
+  grid-template-columns: calc(100% - 601px) 552px;
+  grid-gap: 49px;
+}
+html body.app .main .grid.normal .article-list .article-item {
+  display: grid;
+  grid-template-columns: 233px calc(100% - 249px);
+  grid-gap: 16px;
+}
+html body.app .main .grid.normal .article-list .article-item:not(:nth-child(1)) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f1f1;
+}
+html body.app .main .grid.normal .article-list .article-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 25px;
+}
+html body.app .main .grid.normal .article-list .article-excerpt {
+  margin-top: 8px;
+}
+html body.app .main .grid.normal .article-list .article-excerpt a {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html body.app .main .grid.normal .article-list .grid {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+html body.app .main .grid.normal .article-list .grid .article-container {
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+html body.app .main .grid.normal .article-list .grid .article-item {
+  display: block;
+  grid-gap: 0;
+  grid-template-columns: auto;
+}
+html body.app .main .grid.normal .article-list .grid .article-item:not(:nth-child(1)) {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+html body.app .main .grid.normal .article-list .grid .article-title {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+html body.app .main .grid.normal .article-list .grid .title-head {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+html body.app .main .grid.normal .article-list .grid.line-top {
+  border-top: 1px solid #eee;
+}
+html body.app .main .grid.normal .article-list .grid.article-tttm {
+  border-top: 3px solid #005baa;
+}
+html body.app .main .grid.normal .article-list .grid.article-tttm .title-head {
+  color: #005baa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body.app .main .grid.normal .article-list .grid.article-tttm .title-head a {
+  color: #005baa;
+}
+html body.app .main .grid.normal .article-list .grid.article-tttm .btn-tttm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 123px;
+  height: 32px;
+  margin: 24px auto 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  background: #005baa none;
+  padding: 0 15px;
+  border-radius: 16px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+html body.app .main .grid.normal .category {
+  position: relative;
+}
+html body.app .main .grid.normal .category::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #eee;
+}
+html body.app .main .grid.normal .category .article-item:nth-child(1) {
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+html body.app .main .grid.normal .category .article-item:nth-child(1) .article-title {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+html body.app .main .grid.normal .category .article-item:nth-child(1) .article-excerpt {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 20px;
+}
+html body.app .main .grid.normal .category .article-item:nth-child(1) .article-excerpt a {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) {
+  display: grid;
+  grid-template-columns: calc(100% - 102px) 90px;
+  grid-gap: 12px;
+}
+html body.app .main .grid.normal .category .article-item:not(:nth-child(1)):not(:nth-child(2)) {
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb {
+  order: 2;
+}
+html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+html body.app .main .grid.normal .category-head {
+  display: flex;
+  align-items: center;
+}
+html body.app .main .grid.normal .category-head .title {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0f6c32;
+  margin: 0;
+}
+html body.app .main .grid.normal .category-head .title a {
+  color: #0f6c32;
+}
+html body.app .main .grid.normal .category-head .title a:hover {
+  color: #06c;
+}
+html body.app .main .grid.normal .category-nav {
+  margin: 0 0 0 24px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+html body.app .main .grid.normal .category-nav li:not(:nth-child(1)) {
+  margin-left: 20px;
+}
+html body.app .main .grid.normal .category-nav li a {
+  color: #828282;
+}
+html body.app .main .grid.normal .category-nav li a:hover {
+  color: #06c;
+}
+html body.app .main .grid.normal .category-wrap.line {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 4px solid #f1f1f1;
+}
+html body.app .main .grid.normal .category-container {
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: 192px calc(100% - 233px);
+  grid-row-gap: 12px;
+  grid-column-gap: 41px;
+  position: relative;
+}
+html body.app .main .grid.normal .category-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 213px;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #eee;
+}
+html body.app .main .grid.normal .poll {
+  margin: 24px 0 0;
+  padding: 24px 0 0;
+  border-top: 4px solid #f1f1f1;
+  display: grid;
+  grid-template-columns: calc(100% - 312px) 300px;
+  grid-gap: 12px;
+}
+html body.app .main .grid.list {
+  margin: 32px 0 0;
+  display: grid;
+  grid-template-columns: calc(100% - 380px) 300px;
+  grid-gap: 80px;
+}
+html body.app .main .grid.list .article.list .article-item {
+  display: grid;
+  grid-template-columns: 250px calc(100% - 270px);
+  grid-gap: 20px;
+}
+html body.app .main .grid.list .article.list .article-item:not(:nth-child(1)) {
+  margin: 27px 0 0;
+}
+html body.app .main .grid.list .article.list .article-title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+}
+html body.app .main .grid.list .article.list .article-excerpt {
+  margin: 6px 0 0;
+}
+html body.app .main .grid.list .article.sidebar {
+  padding: 14px 0 0;
+  border-top: 1px solid #eee;
+}
+html body.app .main .grid.list .article.sidebar .title {
+  margin: 0 0 24px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #222;
+}
+html body.app .main .grid.list .article.sidebar .article-item:nth-child(2) .article-title {
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 25px;
+}
+html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) {
+  margin: 20px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid #eee;
+  display: grid;
+  grid-template-columns: calc(100% - 104px) 90px;
+  grid-gap: 14px;
+}
+html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb {
+  order: 2;
+}
+html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+html body.app .main .grid.list .article.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 22px;
+}
+html body.app .main .grid.list .article.grid .article-item {
+  display: block;
+  grid-template-columns: 100%;
+  grid-gap: 0;
+}
+html body.app .main .grid.list .article.grid .article-item:not(:nth-child(1)) {
+  margin: 0;
+}
+html body.app .main .grid.list .article.grid .article-title {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+html body.app .main .grid.list .article .native-wrap {
+  margin: 27px 0 0;
+  padding: 27px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+html body.app .main .grid.list .pagination {
+  margin: 29px 0 0;
+  padding: 21px 0 0;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body.app .main .grid.list .pagination .page-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e6e8e9;
+  border-radius: 8px;
+  background: #fff none;
+  color: #25282b;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+html body.app .main .grid.list .pagination .page-item:not(:first-child) {
+  margin-left: 8px;
+}
+html body.app .main .grid.list .pagination .page-item:hover {
+  background: #0f6c32 none;
+  border: 1px solid #0f6c32;
+  color: #fff;
+}
+html body.app .main .grid.list .pagination .page-item.active {
+  background: #0f6c32 none;
+  border: 1px solid #0f6c32;
+  color: #fff;
+}
+html body.app .breadcrumb {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  line-height: 30px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+html body.app .breadcrumb .title-main {
+  font-size: 16px;
+  line-height: 34px;
+  font-weight: bold;
+  color: #008837;
+  border-bottom: 2px solid #008837;
+  flex-shrink: 0;
+}
+html body.app .breadcrumb .list-bread {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 28px;
+}
+html body.app .breadcrumb .list-bread ul {
+  display: flex;
+  overflow-x: hidden;
+}
+html body.app .breadcrumb .list-bread ul::-webkit-scrollbar {
+  width: 3px;
+  height: 5px;
+}
+html body.app .breadcrumb .list-bread ul::-webkit-scrollbar-track {
+  background: none;
+}
+html body.app .breadcrumb .list-bread ul::-webkit-scrollbar-thumb {
+  background: rgba(143, 143, 143, 0.35);
+  border-radius: 5px;
+}
+html body.app .breadcrumb .list-bread ul::-webkit-scrollbar-thumb:hover {
+  background: rgba(143, 143, 143, 0.5);
+}
+html body.app .breadcrumb .list-bread ul li {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  white-space: nowrap;
+  color: rgba(112, 112, 112, 0.29);
+}
+html body.app .breadcrumb .list-bread ul li:not(:last-child):after {
+  content: "/";
+  display: inline-block;
+}
+html body.app .breadcrumb .list-bread ul li a {
+  padding: 0 8px;
+  color: #8f8f8f;
+  display: inline-block;
+}
+html body.app .breadcrumb .list-bread ul li a:hover {
+  color: #008837;
+}
+html body.app .breadcrumb .list-bread ul li a.active {
+  color: #008837;
+}
+html body.app .breadcrumb .list-bread ul.active {
+  cursor: grabbing;
+}
+html body.app .breadcrumb .list-bread ul.active a {
+  cursor: grabbing;
+}
+html body.app .breadcrumb .list-bread i {
+  margin-top: 13px;
+  flex-shrink: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+a {
+  text-decoration: unset;
+}
+
 input {
   color: #333;
 }
 
-input[type=text] {
-  border: solid 0.5px #efefef;
-  background-color: #f9f9f9;
-  padding: 6px 30px 6px 15px;
-  line-height: 33px;
-  height: 33px;
-  font-size: 13px;
-  outline: none;
-  width: 100%;
-  border-radius: 30px;
-}
-
 li {
-  list-style: none;
   margin: 0;
   padding: 0;
   border: 0;
