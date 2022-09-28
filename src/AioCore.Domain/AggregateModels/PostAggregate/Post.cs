@@ -32,11 +32,13 @@ public class Post : MongoDocument
 
     public string? Source { get; set; }
 
-    public void Update(string title, string description, string content)
+    public void Update(string title, string description, string content, string? slug, Guid? parent)
     {
         Title = string.IsNullOrEmpty(title) ? Title : title;
         Description = string.IsNullOrEmpty(description) ? Description : description;
         Content = string.IsNullOrEmpty(content) ? Content : content;
+        Slug = string.IsNullOrEmpty(slug) ? Slug : slug;
         ModifiedAt = DateTime.Now;
+        Parent = parent ?? Guid.Empty;
     }
 }

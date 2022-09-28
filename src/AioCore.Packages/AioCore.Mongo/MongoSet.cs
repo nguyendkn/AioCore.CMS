@@ -110,6 +110,11 @@ public class MongoSet<TEntity> : IQueryable<TEntity>, IMongoSet<TEntity>
         return Where(expression, string.Empty);
     }
 
+    public async Task<List<TEntity>> ToListAsync()
+    {
+        return await Where(x => true, string.Empty).ToListAsync();
+    }
+
     private IFindFluent<TEntity, TEntity> Where(Expression<Func<TEntity, bool>> expression, string? keyword)
     {
         var builder = Builders<TEntity>.Filter;
