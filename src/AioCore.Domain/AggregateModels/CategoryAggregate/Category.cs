@@ -16,7 +16,11 @@ public class Category : MongoDocument
 
     public string? Source { get; set; }
 
-    public void Update()
+    public void Update(string title, string description, string thumbnail, string keywords)
     {
+        Title = string.IsNullOrEmpty(title) ? Title : title;
+        Description = string.IsNullOrEmpty(title) ? Description : description;
+        Thumbnail = string.IsNullOrEmpty(title) ? Thumbnail : thumbnail;
+        Keywords = string.IsNullOrEmpty(title) ? Keywords : keywords;
     }
 }

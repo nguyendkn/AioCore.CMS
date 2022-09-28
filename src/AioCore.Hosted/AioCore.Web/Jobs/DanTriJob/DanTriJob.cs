@@ -85,15 +85,18 @@ public class DanTriJob : ICronJob
         var htmlDocument = new HtmlDocument();
         htmlDocument.LoadHtml(html);
         var title = htmlDocument.DocumentNode
-            .SelectSingleNode("")
-            .InnerText;
+            .SelectSingleNode("//*[@name=\"title\"]")
+            .Attributes["content"].Value;
         var description = htmlDocument.DocumentNode
-            .SelectSingleNode("")
-            .InnerText;
-        var content = htmlDocument.DocumentNode
-            .SelectSingleNode("")
-            .InnerHtml;
-        category.Update();
+            .SelectSingleNode("//*[@name=\"description\"]")
+            .Attributes["content"].Value;
+        var thumbnail = htmlDocument.DocumentNode
+            .SelectSingleNode("//*[@property=\"og:image\"]")
+            .Attributes["content"].Value;
+        var keywords = htmlDocument.DocumentNode
+            .SelectSingleNode("//*[@name=\"keywords\"]")
+            .Attributes["content"].Value;
+        category.Update(title, description, thumbnail, keywords);
         return category;
     }
 
