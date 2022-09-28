@@ -17,10 +17,11 @@ public static class MongoExtension
     {
         services.AddSingleton(_ =>
         {
-            var settings = MongoClientSettings.FromConnectionString(mongoConfigs.ConnectionString);
+            var mongoUrl = new MongoUrl($"{mongoConfigs.Host}:{mongoConfigs.Port}");
+            var settings = MongoClientSettings.FromUrl(mongoUrl);
             var client = new MongoClient(settings);
 
-            return client.GetDatabase(mongoConfigs.DatabaseName);
+            return client.GetDatabase(mongoConfigs.Database);
         });
         services.AddSingleton<IMongoContextBuilder>(provider =>
         {

@@ -115,8 +115,8 @@ html body.app .main {
 }
 html body.app .main .grid.highlight {
   display: grid;
-  grid-template-columns: calc(100% - 341px) 300px;
-  grid-gap: 41px;
+  grid-template-columns: calc(100% - 340px) 300px;
+  grid-gap: 40px;
 }
 html body.app .main .grid.highlight .article.highlight {
   position: relative;
@@ -138,11 +138,11 @@ html body.app .main .grid.highlight .article.highlight::after {
 }
 html body.app .main .grid.highlight .article.highlight .article-item:not(:nth-child(1)) {
   float: left;
-  width: calc(100% - 555px);
+  width: calc(100% - 556px);
 }
 html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) {
   float: right;
-  width: 514px;
+  width: 516px;
 }
 html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-title {
   font-size: 24px;
@@ -172,7 +172,7 @@ html body.app .main .grid.highlight .article.special::before {
   display: block;
   position: absolute;
   top: 0;
-  left: -21px;
+  left: -20px;
   width: 0;
   height: 100%;
   border-left: 1px solid #eee;
@@ -337,7 +337,7 @@ html body.app .main .grid.highlight .article.column {
   border-top: 1px solid #eee;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 22px;
+  grid-gap: 18px;
 }
 html body.app .main .grid.highlight .article.column .article-title {
   margin: 12px 0 0;
@@ -486,6 +486,19 @@ html body.app .main .grid.normal .category .article-item:not(:nth-child(1)):not(
 html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb {
   order: 2;
 }
+html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb a {
+  position: relative;
+  line-height: 0;
+  display: block;
+  padding: 0 0 66.666666%;
+  overflow: hidden;
+}
 html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-title {
   margin: 0;
   font-size: 14px;
@@ -608,6 +621,19 @@ html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2))
 }
 html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb {
   order: 2;
+}
+html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb a {
+  position: relative;
+  line-height: 0;
+  display: block;
+  padding: 0 0 66.666666%;
+  overflow: hidden;
 }
 html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-title {
   margin: 0;

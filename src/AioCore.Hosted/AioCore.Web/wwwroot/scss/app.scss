@@ -131,8 +131,8 @@ html {
 
         .grid.highlight {
           display: grid;
-          grid-template-columns: calc(100% - 341px) 300px;
-          grid-gap: 41px;
+          grid-template-columns: calc(100% - 340px) 300px;
+          grid-gap: 40px;
 
           .article.highlight {
             position: relative;
@@ -157,12 +157,12 @@ html {
             .article-item {
               &:not(:nth-child(1)) {
                 float: left;
-                width: calc(100% - 555px);
+                width: calc(100% - 556px);
               }
 
               &:nth-child(1) {
                 float: right;
-                width: 514px;
+                width: 516px;
 
                 .article-title {
                   font-size: 24px;
@@ -204,7 +204,7 @@ html {
               display: block;
               position: absolute;
               top: 0;
-              left: -21px;
+              left: -20px;
               width: 0;
               height: 100%;
               border-left: 1px solid #eee;
@@ -412,7 +412,7 @@ html {
             border-top: 1px solid #eee;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 22px;
+            grid-gap: 18px;
 
             .article-title {
               margin: 12px 0 0;
@@ -588,6 +588,21 @@ html {
 
                 .article-thumb {
                   order: 2;
+                  
+                  img {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  }
+
+                  a {
+                    position: relative;
+                    line-height: 0;
+                    display: block;
+                    padding: 0 0 66.666666%;
+                    overflow: hidden
+                  }
                 }
 
                 .article-title {
@@ -742,6 +757,21 @@ html {
 
                 .article-thumb {
                   order: 2;
+
+                  img {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  }
+                  
+                  a {
+                    position: relative;
+                    line-height: 0;
+                    display: block;
+                    padding: 0 0 66.666666%;
+                    overflow: hidden
+                  }
                 }
 
                 .article-title {

@@ -44,8 +44,9 @@ public class MongoSet<TEntity> : IQueryable<TEntity>, IMongoSet<TEntity>
 
     public IMongoCollection<TEntity> Collection(string name)
     {
-        var settings = MongoClientSettings.FromConnectionString(_mongoConfigs.ConnectionString);
-        return new MongoClient(settings).GetDatabase(_mongoConfigs.DatabaseName).GetCollection<TEntity>(name);
+        var mongoUrl = new MongoUrl($"{_mongoConfigs.Host}:{_mongoConfigs.Port}");
+        var settings = MongoClientSettings.FromUrl(mongoUrl);
+        return new MongoClient(settings).GetDatabase(_mongoConfigs.Database).GetCollection<TEntity>(name);
     }
 
     public async Task<TEntity> AddAsync(TEntity entity)
