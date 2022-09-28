@@ -7,7 +7,6 @@ using Hangfire.Mongo.Migration.Strategies;
 using Hangfire.Mongo.Migration.Strategies.Backup;
 using HangfireBasicAuthenticationFilter;
 using MongoDB.Driver;
-using MongoDB.Driver.Core.Configuration;
 
 namespace AioCore.Web.Helpers;
 
@@ -18,7 +17,7 @@ public static class StartupHelpers
         var connectionString = $"{mongoConfigs.Host}:{mongoConfigs.Port}";
         var mongoUrlBuilder = new MongoUrlBuilder(connectionString)
         {
-            DatabaseName = mongoConfigs.Database,
+            DatabaseName = "hangfire",
         };
         var mongoClient = new MongoClient(mongoUrlBuilder.ToMongoUrl());
         var mongoMigrationOptions = new MongoMigrationOptions
@@ -29,7 +28,6 @@ public static class StartupHelpers
         var mongoStorageOptions = new MongoStorageOptions
         {
             MigrationOptions = mongoMigrationOptions,
-            Prefix = "hangfire",
             CheckConnection = true,
             CheckQueuedJobsStrategy = CheckQueuedJobsStrategy.TailNotificationsCollection
         };
@@ -40,7 +38,7 @@ public static class StartupHelpers
             .UseRecommendedSerializerSettings()
             .UseMongoStorage(mongoClient, mongoUrlBuilder.DatabaseName, mongoStorageOptions)
         );
-        JobStorage.Current = new MongoStorage(mongoClient, mongoConfigs.Database, mongoStorageOptions);
+        JobStorage.Current = new MongoStorage(mongoClient, mongoUrlBuilder.DatabaseName, mongoStorageOptions);
         services.AddHangfireServer();
     }
 
@@ -82,7 +80,6 @@ public static class StartupHelpers
     private static IEnumerable<HangfireJob> HangfireJobs(IHostEnvironment environment)
     {
         var instance = new List<HangfireJob>();
-        var environmentName = environment.EnvironmentName;
         var assemblyPath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location);
         var appSettingsPath = Path.Combine(assemblyPath!, $"appsettings.json");
         new ConfigurationBuilder()

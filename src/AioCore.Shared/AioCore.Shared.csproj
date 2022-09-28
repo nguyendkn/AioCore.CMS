@@ -10,6 +10,7 @@
         <PackageReference Include="Hangfire.AspNetCore" Version="1.8.0-rc1" />
         <PackageReference Include="Hangfire.Dashboard.Basic.Authentication" Version="5.0.0" />
         <PackageReference Include="Hangfire.Mongo" Version="1.7.3" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
     </ItemGroup>
 
     <ItemGroup>

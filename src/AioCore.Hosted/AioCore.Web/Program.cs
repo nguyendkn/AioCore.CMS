@@ -3,9 +3,8 @@ using AioCore.Mongo;
 using AioCore.Shared;
 using AioCore.Web.Helpers;
 using AioCore.Web.Helpers.HangfireHelpers;
-using AioCore.Web.Jobs;
+using AioCore.Web.Jobs.DanTriJob;
 using AioCore.Web.Middlewares;
-using Hangfire;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -18,6 +17,7 @@ configuration.Bind(appSettings);
 services.AddSingleton(appSettings);
 services.AddRazorPages();
 services.AddServerSideBlazor();
+services.AddHttpClient();
 services.AddMongoContext<AioCoreContext>(appSettings.MongoConfigs);
 services.AddHangfireServer(appSettings.MongoConfigs);
 services.AddScoped<ICronJob, DanTriJob>();
