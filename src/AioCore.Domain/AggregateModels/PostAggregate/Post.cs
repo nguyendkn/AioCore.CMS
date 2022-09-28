@@ -1,6 +1,9 @@
-﻿namespace AioCore.Domain.AggregateModels.PostAggregate;
+﻿using AioCore.Shared.Extensions;
+
+namespace AioCore.Domain.AggregateModels.PostAggregate;
 
 /// <summary>
+/// HashKey: Khóa chính thứ 2
 /// Title: Tiêu đề
 /// Parent: Category, Post, Menu
 /// Thumbnail: Ảnh thu nhỏ
@@ -12,6 +15,8 @@
 /// </summary>
 public class Post : MongoDocument
 {
+    public string HashKey { get; set; } = default!;
+
     public string Title { get; set; } = default!;
 
     public Guid Parent { get; set; }
@@ -34,6 +39,7 @@ public class Post : MongoDocument
 
     public void Update(string title, string description, string content, string? slug, Guid? parent)
     {
+        HashKey = string.IsNullOrEmpty(title) ? Title : title.CreateMd5();
         Title = string.IsNullOrEmpty(title) ? Title : title;
         Description = string.IsNullOrEmpty(description) ? Description : description;
         Content = string.IsNullOrEmpty(content) ? Content : content;

@@ -1,4 +1,7 @@
-﻿using System.Xml;
+﻿using System.Text;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Xml;
 using AioCore.Domain;
 using AioCore.Domain.AggregateModels.CategoryAggregate;
 using AioCore.Domain.AggregateModels.PostAggregate;
@@ -47,7 +50,7 @@ public class DanTriJob : ICronJob
         foreach (var url in danTriCategories.Urlset.Url)
         {
             var category = await _context.Categories.FirstOrDefaultAsync(x =>
-                !string.IsNullOrEmpty(x.Source) && x.Source.Equals(url.Loc));
+                x.Active && !string.IsNullOrEmpty(x.Source) && x.Source.Equals(url.Loc));
             if (category != null)
             {
                 if (category.Slug is null)
@@ -85,8 +88,8 @@ public class DanTriJob : ICronJob
         var danTriGoogleNews = JsonConvert.DeserializeObject<DanTriGoogleNews>(json);
         foreach (var url in danTriGoogleNews.Urlset.Url)
         {
-            if (await _context.Posts.AnyAsync(x => x.Title.Equals(url.NewsNews.NewsTitle))) continue;
-            var slug = url.NewsNews.NewsTitle.RemoveDiacritics();
+            if (await _context.Posts.AnyAsync(x => !string.IsNullOrEmpty(x.Source) && x.Source.Equals(url.Loc)))
+                continue;
             var post = new Post
             {
                 Title = url.NewsNews.NewsTitle,
@@ -94,7 +97,7 @@ public class DanTriJob : ICronJob
                 CreatedAt = url.NewsNews.NewsPublicationDate,
                 Thumbnail = url.ImageImage.ImageLoc,
                 Source = url.Loc,
-                Slug = slug
+                HashKey = url.NewsNews.NewsTitle.CreateMd5()
             };
             await _context.Posts.AddAsync(post);
             post = await UpdatePost(post, categories);
@@ -151,6 +154,8 @@ public class DanTriJob : ICronJob
     {
         var httpClient = _httpClientFactory.CreateClient();
         var html = await httpClient.GetStringAsync(news.Source);
+        html = HttpUtility.HtmlDecode(html);
+        html = Regex.Replace(html, "(<style.+?</style>)|(<script.+?</script>)", string.Empty);
         var htmlDocument = new HtmlDocument();
         htmlDocument.LoadHtml(html);
         var slugItems = news.Source?.Replace(".htm", string.Empty).Split('/').ToList();

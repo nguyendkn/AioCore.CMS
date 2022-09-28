@@ -1,7 +1,11 @@
-﻿namespace AioCore.Domain.AggregateModels.CategoryAggregate;
+﻿using AioCore.Shared.Extensions;
+
+namespace AioCore.Domain.AggregateModels.CategoryAggregate;
 
 public class Category : MongoDocument
 {
+    public string? HashKey { get; set; }
+
     public string Title { get; set; } = default!;
 
     public List<Guid>? Parents { get; set; }
@@ -20,6 +24,7 @@ public class Category : MongoDocument
 
     public void Update(string? title, string? description, string? thumbnail, string? keywords, string? slug)
     {
+        HashKey = string.IsNullOrEmpty(title) ? HashKey : title.CreateMd5();
         Title = string.IsNullOrEmpty(title) ? Title : title;
         Description = string.IsNullOrEmpty(title) ? Description : description;
         Thumbnail = string.IsNullOrEmpty(title) ? Thumbnail : thumbnail;

@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace AioCore.Shared.Extensions;
 
@@ -43,5 +45,19 @@ public static class StringExtensions
     {
         var index = input.IndexOf(to, StringComparison.Ordinal);
         return input.Substring(start, index - 1);
+    }
+
+    public static string CreateMd5(this string? input, string? prefix = "")
+    {
+        if (string.IsNullOrEmpty(input)) return string.Empty;
+        using var md5 = MD5.Create();
+        var inputBytes = Encoding.ASCII.GetBytes(input);
+        var hashBytes = md5.ComputeHash(inputBytes);
+
+        var sb = new StringBuilder();
+        foreach (var hashByte in hashBytes)
+            sb.Append(hashByte.ToString("X2"));
+        var prefixMd5 = !string.IsNullOrEmpty(prefix) ? $"{prefix}_" : string.Empty;
+        return $"{prefixMd5}{sb}";
     }
 }
