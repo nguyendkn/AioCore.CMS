@@ -20,6 +20,7 @@ services.AddServerSideBlazor();
 services.AddHttpClient();
 services.AddMongoContext<AioCoreContext>(appSettings.MongoConfigs);
 services.AddHangfireServer(appSettings.MongoConfigs);
+services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 services.AddScoped<ICronJob, DanTriJob>();
 
 var app = builder.Build();
