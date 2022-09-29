@@ -6,6 +6,16 @@ namespace AioCore.Shared.Extensions;
 
 public static class StringExtensions
 {
+    public static Guid ToGuid(this string str)
+    {
+        return Guid.TryParse(str, out var guid) ? guid : Guid.Empty;
+    }
+
+    public static bool ParseGuid(this string? str)
+    {
+        return Guid.TryParse(str, out _);
+    }
+
     public static string RemoveDiacritics(this string str)
     {
         if (string.IsNullOrEmpty(str))

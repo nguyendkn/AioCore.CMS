@@ -1,4 +1,6 @@
-﻿using AioCore.Domain.AggregateModels.CategoryAggregate;
+﻿using System.Collections.Concurrent;
+using AioCore.Domain.AggregateModels.CategoryAggregate;
+using AioCore.Domain.AggregateModels.EventsAggregate;
 
 namespace AioCore.Domain;
 
@@ -10,5 +12,11 @@ public class AioCoreContext : MongoContext
 
     public MongoSet<Category> Categories { get; set; } = default!;
 
+    public ConcurrentDictionary<int, Category> CachedCategories { get; set; } = default!;
+
     public MongoSet<Post> Posts { get; set; } = default!;
+
+    public ConcurrentDictionary<int, Post> CachedPosts { get; set; } = default!;
+
+    public MongoSet<PageView> PageViews { get; set; } = default!;
 }

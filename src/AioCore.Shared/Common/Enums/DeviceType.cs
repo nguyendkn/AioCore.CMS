@@ -1,4 +1,4 @@
-﻿namespace AioCore.Shared.Common;
+﻿namespace AioCore.Shared.Common.Enums;
 
 public enum DeviceType
 {
