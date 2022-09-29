@@ -1,0 +1,1633 @@
+@font-face {
+  font-family: 'RobotoBold';
+  src: local("RobotoBold"), url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Bold.woff2") format("woff2"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Bold.woff") format("woff"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Bold.ttf") format("truetype"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Bold.svg#Roboto-Bold") format("svg");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto"), url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Regular.woff2") format("woff2"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Regular.woff") format("woff"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Regular.ttf") format("truetype"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Regular.svg#Roboto-Regular") format("svg");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMedium';
+  src: local("RobotoMedium"), url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Medium.woff2") format("woff2"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Medium.woff") format("woff"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Medium.ttf") format("truetype"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+  url("https://static.mediacdn.vn/danviet/mob_font/Roboto-Medium.svg#Roboto-Medium") format("svg");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon.icon-mb--3 {
+  margin-bottom: -3px;
+}
+
+.icon.icon-menu {
+  background-image: url("https://static.mediacdn.vn/danviet/mob_images/icon_menu.svg");
+  background-size: contain;
+  width: 17px;
+  height: 13px;
+  margin-bottom: 2px;
+  filter: grayscale(100%);
+}
+
+.icon.icon-logo {
+  background-image: url("https://static.mediacdn.vn/danviet/mob_images/logo.svg");
+  background-size: contain;
+  width: 117px;
+  height: 21px;
+  margin-bottom: -2px;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  transition: ease .25s;
+  font-family: Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: unset;
+  font-style: inherit;
+  color: inherit;
+  outline: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  outline: none;
+}
+
+iframe {
+  width: 100%;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+select {
+  outline: none;
+}
+
+textarea {
+  outline: none;
+}
+
+b {
+  font-weight: normal;
+  font-family: RobotoBold, sans-serif;
+}
+
+strong {
+  font-weight: normal;
+  font-family: RobotoBold, sans-serif;
+}
+
+.separator {
+  border-bottom: 2px solid #e9eaee;
+}
+
+.separator-large {
+  border-bottom: 8px solid #e9eaee;
+}
+
+.bg-gray {
+  background: #e9eaee;
+}
+
+.ads-box {
+  padding: 5px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.clear-after {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+.wrapper {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.news-stream {
+  li.item-stream {
+    &:not(.small) {
+      .category {
+        &:after {
+          content: ' ';
+          display: block;
+          clear: both;
+        }
+
+        color: #008837;
+        font: normal 13px Roboto, sans-serif;
+        margin-bottom: 11px;
+
+        a {
+          color: #008837;
+          display: inline-block;
+        }
+
+        .right {
+          color: #6c6e70;
+          font: normal 12px Roboto;
+
+          img {
+            display: inline-block;
+            margin-right: 3px;
+            width: 18px;
+            filter: brightness(75%);
+          }
+        }
+
+        .right.count-view-video {
+          b {
+            color: #6c6e70;
+            font: normal 12px Roboto;
+          }
+        }
+      }
+
+      .info {
+        &:after {
+          content: ' ';
+          display: block;
+          clear: both;
+        }
+
+        color: #6c6e70;
+        font: normal 12px Roboto;
+
+        .icon {
+          margin-bottom: -1px;
+        }
+
+        .right {
+          img {
+            width: 15px;
+            margin-bottom: -2px;
+            display: inline-block;
+          }
+        }
+      }
+
+      .img {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+        margin-bottom: 11px;
+
+        > img {
+          display: block;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .img-overlay-bg {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8));
+        }
+
+        .img-overlay-text {
+          position: absolute;
+          bottom: 16px;
+          padding: 0 20px;
+          width: 60%;
+          width: -webkit-calc(100% - 40px);
+          width: calc(100% - 40px);
+          color: #e9eaee;
+          font: normal 12px Roboto, sans-serif;
+
+          .padding {
+            display: inline-block;
+            width: 20px;
+          }
+
+          .right.count-view {
+            b {
+              color: #e9eaee;
+              font: normal 12px Roboto, sans-serif;
+            }
+          }
+        }
+      }
+
+      .title {
+        display: block;
+        color: #202124;
+        font: normal 20px/28px RobotoBold;
+        margin-bottom: 15px;
+
+        a {
+          color: #202124;
+        }
+      }
+
+      .sapo {
+        &:not(:empty) {
+          font: normal 13px/18px Roboto;
+          color: #6c6e70;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    padding: 20px 0;
+
+    .player.video {
+      margin-bottom: 11px;
+    }
+
+    &:not(:last-child) {
+      border-bottom: thin solid #e9eaee;
+    }
+  }
+
+  .news-read-more {
+    margin: 30px -15px;
+  }
+}
+
+.highlight {
+  .highlight-list {
+    li {
+      &:after {
+        content: ' ';
+        display: block;
+        clear: both;
+      }
+
+      padding: 15px 0;
+      border-top: thin solid #e9eaee;
+
+      .title {
+        display: block;
+        color: #202124;
+        font: normal 17px/22px RobotoBold;
+        margin-bottom: 10px;
+
+        a {
+          color: #202124;
+        }
+      }
+
+      .info {
+        font: normal 12px Roboto;
+        color: #6c6e70;
+
+        a {
+          display: inline;
+          color: #008837;
+          padding-right: 7px;
+        }
+      }
+
+      .left {
+        width: 60%;
+        width: -webkit-calc(100% - 100px);
+        width: calc(100% - 100px);
+      }
+
+      .img {
+        width: 80px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+
+        > img {
+          display: block;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .img-overlay-bg {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8));
+        }
+
+        .img-overlay-text {
+          position: absolute;
+          bottom: 16px;
+          padding: 0 20px;
+          width: 60%;
+          width: -webkit-calc(100% - 40px);
+          width: calc(100% - 40px);
+          color: #e9eaee;
+          font: normal 12px Roboto, sans-serif;
+
+          .padding {
+            display: inline-block;
+            width: 20px;
+          }
+
+          .right.count-view {
+            b {
+              color: #e9eaee;
+              font: normal 12px Roboto, sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .highlight-first[data-icontype="1"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -262px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .highlight-first[data-icontype="2"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -332px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .highlight-first[data-icontype="3"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -332px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .highlight-first[data-icontype="20"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -297px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .highlight-first[data-icontype="27"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat 0 0;
+        background-size: 362px 30px;
+        width: 112px;
+        height: 22px;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon_views {
+  width: 18px;
+  display: inline-block;
+}
+
+.icon_cmt {
+  width: 14px;
+}
+
+.block-wrapper {
+  position: relative;
+  margin-top: 40px;
+  z-index: 99;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.flex.flex-col {
+  flex-direction: column;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.scrollToTop {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 136, 55, .5);
+  position: fixed;
+  bottom: 150px;
+  right: 10px;
+  z-index: 999999;
+
+  &:after {
+    position: absolute;
+    top: 16px;
+    left: 13px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #fff;
+    content: '';
+  }
+}
+
+#header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-bottom: thin solid #008837;
+  line-height: 40px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .05);
+  z-index: 999;
+
+  .left {
+    .icon {
+      margin-right: 15px;
+    }
+
+    h1 {
+      display: inline-block;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      font-weight: normal;
+    }
+
+    div {
+      display: inline-block;
+      margin-top: 3.5px;
+    }
+
+    margin-top: -2px;
+  }
+
+  ul.right {
+    margin-top: 1px;
+
+    li {
+      display: inline-block;
+      height: 25px;
+      line-height: 25px;
+
+      img {
+        display: inline-block;
+        margin-bottom: -2px;
+        width: 18px;
+      }
+
+      &:not(:last-child) {
+        padding-right: 13px;
+        border-right: thin solid #e9eaee;
+        margin-right: 10px;
+      }
+    }
+
+    li#top-link-account {
+      position: relative;
+
+      a {
+        font-size: 13px;
+        font-weight: bold;
+        color: #f00;
+      }
+
+      .first.changeImg {
+        img {
+          width: 22px;
+          margin-bottom: -5px;
+          margin-right: -10px;
+        }
+      }
+
+      .second {
+        display: none;
+        position: absolute;
+        top: 33px;
+        right: -15px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgba(112, 112, 112, .8);
+        min-width: 160px;
+
+        img {
+          width: 40px !important;
+          float: left;
+        }
+
+        .user-name {
+          font: normal 15px/20px 'RobotoMedium', Arial;
+          padding-top: 5px;
+          color: #fff;
+          margin-left: 50px;
+          min-height: 40px;
+          text-align: left;
+        }
+
+        .btn-logout {
+          clear: both;
+          font: normal 16px/19px 'RobotoMedium', Arial;
+          border-radius: 5px;
+          color: #fff;
+          background: #008837;
+          padding: 3px 15px 5px;
+          margin-top: 5px;
+          display: inline-block;
+        }
+
+        &:before {
+          content: '';
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid #8d8d8d;
+          position: absolute;
+          top: -8px;
+          right: 8px;
+          z-index: 100;
+        }
+      }
+
+      .second.show {
+        display: block;
+      }
+    }
+  }
+}
+
+#search-form {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background: #008837;
+  height: 35px;
+  border-radius: 0 0 2px 2px;
+
+  #search-field {
+    width: 75%;
+    width: -webkit-calc(80% - 10px);
+    width: calc(80% - 10px);
+    border: none;
+    border-radius: 5px 0 0 5px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    margin-top: 5px;
+    display: block;
+  }
+
+  #search-btn {
+    width: 20%;
+    display: block;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    background: #dedede;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    margin-top: 5px;
+
+    img {
+      display: inline-block;
+      width: 18px;
+      margin-bottom: -2.5px;
+    }
+  }
+}
+
+.header-padding {
+  height: 41px;
+}
+
+#top-bar {
+  border-top: thin solid #ccc;
+  line-height: 36px;
+  font: normal 13px/36px Roboto, sans-serif;
+  color: #6c6e70;
+  padding-right: 0;
+  display: block !important;
+
+  #txt-time {
+    font: normal 11px/13px Roboto, sans-serif;
+  }
+
+  img {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: -1px;
+    width: 12px;
+  }
+
+  .icon {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: -1px;
+    width: 12px;
+  }
+
+  svg {
+    margin-bottom: -2px;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+
+  img.img-show-child {
+    margin-bottom: 1.5px;
+    margin-left: 7px;
+    width: 21px;
+  }
+
+  a {
+    display: inline-block;
+
+    &:not(.normal) {
+      font-family: RobotoBold, sans-serif;
+      color: #008837;
+    }
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      width: auto;
+
+      h1.title-cate {
+        margin-top: -1px;
+      }
+
+      .title-cate {
+        svg {
+          margin-left: 7px;
+        }
+
+        a {
+          font: normal 13px/36px RobotoBold, sans-serif;
+        }
+      }
+    }
+  }
+
+  ul.list-child-cate {
+    position: relative;
+    padding: 0 12px 0 12px;
+    box-sizing: border-box;
+    background: #e9e9e9;
+    white-space: nowrap;
+    overflow-y: scroll;
+    margin-left: -20px;
+    display: none;
+
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 12px;
+      vertical-align: text-top;
+    }
+
+    li.selfcat {
+      a {
+        color: #fff;
+        background: #000;
+      }
+    }
+  }
+
+  ul.list-child-cate.show-child {
+    display: block;
+  }
+}
+
+#top-bar.time-homepage {
+  display: none;
+}
+
+.bottom-space {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  height: 30px;
+}
+
+#bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  -webkit-box-shadow: 0 -5px 6px rgba(0, 0, 0, .05);
+  box-shadow: 0 -5px 6px rgba(0, 0, 0, .05);
+  background-color: #fff;
+  line-height: 56px;
+  text-align: center;
+  z-index: 9999;
+
+  li {
+    width: 20%;
+    display: inline-block;
+    font: normal 13px RobotoMedium, sans-serif;
+    color: #6c6e70;
+    margin-top: 8px;
+
+    &:not(:last-child) {
+      margin-right: 1.5%;
+    }
+
+    svg {
+      width: 20px;
+      max-height: 20px;
+      height: auto;
+
+      path {
+        fill: #6c6e70;
+      }
+    }
+
+    .text {
+      display: block;
+      color: #6c6e70;
+      font: normal 11px RobotoMedium, sans-serif;
+    }
+  }
+
+  li.active {
+    color: #008837;
+
+    .text {
+      color: #008837;
+    }
+
+    svg {
+      path {
+        fill: #008837;
+      }
+    }
+  }
+}
+
+.bottom-bar-padding {
+  display: block;
+  height: 56px;
+}
+
+.news-stream.no-sep {
+  li.item-stream {
+    border-bottom: none;
+  }
+}
+
+#newest-news {
+  margin: 0 20px;
+}
+
+#hot-news {
+  margin: 0 20px;
+}
+
+.news-read-more {
+  text-align: center;
+  margin: 30px 0;
+
+  .btn {
+    font: normal 14px Roboto;
+    color: #fff;
+    padding: 6px 16px;
+    background: #008837;
+    border-radius: 5px;
+  }
+}
+
+.main-block.home-box-event {
+  background: #eae0c7;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  margin: 0 -20px;
+  border-bottom: 3px solid #008837;
+
+  .box-event-big {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+
+    .item {
+      .title {
+        margin-bottom: 15px;
+        font: normal 17px/22px RobotoBold;
+      }
+
+      .box-img {
+        padding: 0;
+        margin-top: 10px;
+        width: 100%;
+
+        .img {
+          flex-shrink: 0;
+          margin-right: 15px;
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      .box-title {
+        .catetime {
+          padding-top: 0;
+          padding-bottom: 4px;
+
+          .cate {
+            a {
+              display: inline;
+              color: #008837;
+              padding-right: 7px;
+              font: normal 12px Roboto;
+            }
+          }
+        }
+
+        .sapo {
+          color: #6c6e70;
+          font: normal 13px/18px Roboto;
+        }
+      }
+    }
+  }
+
+  .box-event-small {
+    .item {
+      width: 100%;
+      padding: 10px 0;
+
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .sapo {
+        color: #6c6e70;
+        font: normal 13px/18px Roboto;
+        margin-top: 4px;
+      }
+
+      &:first-child {
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}
+
+[class^="img_chu_thich"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.pub-date {
+  display: none;
+}
+
+.LayoutAlbumWrapper {
+  .LayoutAlbumItem {
+    margin: 0 0 5px;
+  }
+}
+
+[data-icontype="1"] {
+  .img {
+    position: relative;
+  }
+}
+
+[data-icontype="2"] {
+  .img {
+    position: relative;
+  }
+}
+
+[data-icontype="20"] {
+  .img {
+    position: relative;
+  }
+}
+
+[data-icontype="27"] {
+  .img {
+    position: relative;
+  }
+}
+
+[data-icontype="3"] {
+  .img {
+    position: relative;
+  }
+}
+
+#main-wrapper {
+  .item-stream.default[data-icontype="1"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -262px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .item-stream.default[data-icontype="2"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -332px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .item-stream.default[data-icontype="3"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -332px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .item-stream.default[data-icontype="20"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -297px 0;
+        background-size: 362px 30px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .item-stream.default[data-icontype="27"] {
+    .img {
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat 0 0;
+        background-size: 362px 30px;
+        width: 112px;
+        height: 22px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .item-stream {
+    &:not(.default)[data-icontype="1"] {
+      .title {
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 5px;
+          background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -205px 0;
+          background-size: 362px 30px;
+          width: 14px;
+          height: 13px;
+          z-index: 1;
+          margin-bottom: -1px;
+        }
+      }
+    }
+
+    &:not(.default)[data-icontype="2"] {
+      .title {
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 5px;
+          background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+          background-size: 362px 30px;
+          width: 14px;
+          height: 14px;
+          margin-bottom: -1px;
+        }
+      }
+    }
+
+    &:not(.default)[data-icontype="3"] {
+      .title {
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 5px;
+          background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+          background-size: 362px 30px;
+          width: 14px;
+          height: 14px;
+          margin-bottom: -1px;
+        }
+      }
+    }
+
+    &:not(.default)[data-icontype="20"] {
+      .title {
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 5px;
+          background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -224px 0;
+          background-size: 362px 30px;
+          width: 14px;
+          height: 14px;
+          margin-bottom: -1px;
+        }
+      }
+    }
+
+    &:not(.default)[data-icontype="27"] {
+      .title {
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 5px;
+          background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -118px 0;
+          background-size: 362px 30px;
+          width: 82px;
+          height: 15px;
+          margin-bottom: -1px;
+        }
+      }
+    }
+  }
+}
+
+.special-box-top[data-icontype="1"] {
+  .img {
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -262px 0;
+      background-size: 362px 30px;
+      width: 30px;
+      height: 30px;
+      z-index: 1;
+    }
+  }
+}
+
+.special-box-top[data-icontype="2"] {
+  .img {
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -332px 0;
+      background-size: 362px 30px;
+      width: 30px;
+      height: 30px;
+      z-index: 1;
+    }
+  }
+}
+
+.special-box-top[data-icontype="3"] {
+  .img {
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -332px 0;
+      background-size: 362px 30px;
+      width: 30px;
+      height: 30px;
+      z-index: 1;
+    }
+  }
+}
+
+.special-box-top[data-icontype="20"] {
+  .img {
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -297px 0;
+      background-size: 362px 30px;
+      width: 30px;
+      height: 30px;
+      z-index: 1;
+    }
+  }
+}
+
+.special-box-top[data-icontype="27"] {
+  .img {
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat 0 0;
+      background-size: 362px 30px;
+      width: 112px;
+      height: 22px;
+      z-index: 1;
+    }
+  }
+}
+
+.cate-list {
+  [data-icontype="1"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -205px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 13px;
+        z-index: 1;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="2"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="3"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="20"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -224px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="27"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -118px 0;
+        background-size: 362px 30px;
+        width: 82px;
+        height: 15px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
+.highlight-list {
+  [data-icontype="1"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -205px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 13px;
+        z-index: 1;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="2"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="3"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="20"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -224px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="27"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -118px 0;
+        background-size: 362px 30px;
+        width: 82px;
+        height: 15px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
+.special-box-content {
+  [data-icontype="1"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -205px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 13px;
+        z-index: 1;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="2"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="3"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -243px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="20"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -224px 0;
+        background-size: 362px 30px;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  [data-icontype="27"] {
+    .title {
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        background: url(https://static.mediacdn.vn/danviet/news-icons.png) no-repeat -118px 0;
+        background-size: 362px 30px;
+        width: 82px;
+        height: 15px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
+[data-icontype="11"][data-live-status="1"] {
+  .title {
+    &:before {
+      content: "LIVE";
+      background: #008837;
+      color: #fff;
+      padding: 6px;
+      border-radius: 4px;
+      margin-right: 6px;
+      display: inline-block;
+      box-sizing: border-box;
+      line-height: 1;
+      font-size: .8em;
+      background-image: url(https://static.mediacdn.vn/danviet/circle.svg);
+      background-size: .5em .5em;
+      background-repeat: no-repeat;
+      background-position: 4px;
+      padding-left: 1.1em;
+    }
+  }
+}
+
+[data-icontype="10"][data-live-status="1"] {
+  .title {
+    &:before {
+      content: "LIVE";
+      background: #008837;
+      color: #fff;
+      padding: 6px;
+      border-radius: 4px;
+      margin-right: 6px;
+      display: inline-block;
+      box-sizing: border-box;
+      line-height: 1;
+      font-size: .8em;
+      background-image: url(https://static.mediacdn.vn/danviet/circle.svg);
+      background-size: .5em .5em;
+      background-repeat: no-repeat;
+      background-position: 4px;
+      padding-left: 1.1em;
+    }
+  }
+}
+
+@media all and (max-width: 320px) {
+  #bottom-bar {
+    li {
+      font: normal 11px RobotoMedium, sans-serif;
+    }
+  }
+}

@@ -1,7 +1,9 @@
 {
   "name": "aioc",
   "scripts": {
-    "build:scss": "npx sass wwwroot/scss/app.scss wwwroot/css/app.css"
+    "build:scss": "npm run build:desktop:scss && npm run build:mobile:scss",
+    "build:desktop:scss": "npx sass wwwroot/scss/app.desktop.scss wwwroot/css/app.desktop.css",
+    "build:mobile:scss": "npx sass wwwroot/scss/app.mobile.scss wwwroot/css/app.mobile.css"
   },
   "dependencies": {
     

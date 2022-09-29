@@ -1,10 +1,12 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using AioCore.Services
+@using AioCore.Shared.Common
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@_layoutType"/>
+        <RouteView RouteData="@routeData" DefaultLayout="@LayoutType"/>
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@_layoutType">
+        <LayoutView Layout="@LayoutType">
             <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
@@ -13,14 +15,13 @@
 @code {
 
     [Inject]
-    public IHttpContextAccessor ContextAccessor { get; set; } = default!;
+    public IClientService ClientService { get; set; } = default!;
 
-    private Type _layoutType = typeof(MainLayout);
+    private Type? LayoutType { get; set; }
 
     protected override Task OnInitializedAsync()
     {
-        var userAgent = ContextAccessor.HttpContext?.Request.Headers["User-Agent"];
-        _layoutType = userAgent.ToString()!.Contains("mobile") ? typeof(MobileLayout) : typeof(MainLayout);
+        LayoutType = ClientService.GetDeviceType().Equals(DeviceType.Desktop) ? typeof(MainLayout) : typeof(MobileLayout);
         return base.OnInitializedAsync();
     }
 
