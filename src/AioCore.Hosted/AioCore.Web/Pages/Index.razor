@@ -1,0 +1,29 @@
+﻿@page "/"
+@using AioCore.Shared.Common
+@using AioCore.Services
+@layout MainLayout
+
+@switch (_deviceType)
+{
+    case DeviceType.Desktop:
+        <AioCore.Web.Pages.DesktopPages.Index></AioCore.Web.Pages.DesktopPages.Index>
+        break;
+    case DeviceType.Mobile:
+        <AioCore.Web.Pages.MobilePages.Index></AioCore.Web.Pages.MobilePages.Index>
+        break;
+}
+
+@code {
+
+    [Inject]
+    public IClientService ClientService { get; set; } = default!;
+
+    private DeviceType _deviceType = DeviceType.Undefined;
+
+    protected override Task OnInitializedAsync()
+    {
+        _deviceType = ClientService.GetDeviceType();
+        return base.OnInitializedAsync();
+    }
+
+}

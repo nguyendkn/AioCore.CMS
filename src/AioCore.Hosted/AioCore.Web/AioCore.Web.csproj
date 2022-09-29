@@ -18,4 +18,8 @@
       <Folder Include="wwwroot\css" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\MobilePages\Index.razor" />
+    </ItemGroup>
+
 </Project>

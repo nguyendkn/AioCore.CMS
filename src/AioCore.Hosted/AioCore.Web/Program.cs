@@ -1,5 +1,6 @@
 using AioCore.Domain;
 using AioCore.Mongo;
+using AioCore.Services;
 using AioCore.Shared;
 using AioCore.Web.Helpers;
 using AioCore.Web.Helpers.HangfireHelpers;
@@ -21,6 +22,7 @@ services.AddHttpClient();
 services.AddMongoContext<AioCoreContext>(appSettings.MongoConfigs);
 services.AddHangfireServer(appSettings.MongoConfigs);
 services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+services.RegisterServices();
 services.AddScoped<ICronJob, DanTriJob>();
 
 var app = builder.Build();
