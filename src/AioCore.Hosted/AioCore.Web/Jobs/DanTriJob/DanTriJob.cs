@@ -88,7 +88,8 @@ public class DanTriJob : ICronJob
         var danTriGoogleNews = JsonConvert.DeserializeObject<DanTriGoogleNews>(json);
         foreach (var url in danTriGoogleNews.Urlset.Url)
         {
-            if (await _context.Posts.AnyAsync(x => !string.IsNullOrEmpty(x.Source) && x.Source.Equals(url.Loc)))
+            if (await _context.Posts.AnyAsync(x =>
+                    x.Active && !string.IsNullOrEmpty(x.Source) && x.Source.Equals(url.Loc)))
                 continue;
             var post = new Post
             {
@@ -99,9 +100,19 @@ public class DanTriJob : ICronJob
                 Source = url.Loc,
                 HashKey = url.NewsNews.NewsTitle.CreateMd5()
             };
-            await _context.Posts.AddAsync(post);
-            post = await UpdatePost(post, categories);
-            await _context.Posts.UpdateAsync(post.Id, post);
+            try
+            {
+                await _context.Posts.AddAsync(post);
+                post = await UpdatePost(post, categories);
+                await _context.Posts.UpdateAsync(post.Id, post);
+            }
+            catch(Exception ex)
+            {
+                post.Active = false;
+                if (ex.Message.Contains("429"))
+                    post = await UpdatePost(post, categories);
+                await _context.Posts.UpdateAsync(post.Id, post);
+            }
         }
     }
 
@@ -143,8 +154,10 @@ public class DanTriJob : ICronJob
             category.Update(title, description, thumbnail, keywords, slug);
             return category;
         }
-        catch
+        catch(Exception ex)
         {
+            if (ex.Message.Contains("429"))
+                await UpdateCategory(category);
             category.Active = false;
             return category;
         }

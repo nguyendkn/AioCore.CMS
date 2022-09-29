@@ -24,6 +24,7 @@ public class Post : MongoDocument
     public string Slug { get; set; } = default!;
 
     public string Thumbnail { get; set; } = default!;
+    
 
     public DateTime CreatedAt { get; set; }
 
@@ -37,6 +38,8 @@ public class Post : MongoDocument
 
     public string? Source { get; set; }
 
+    public bool Active { get; set; }
+
     public void Update(string title, string description, string content, string? slug, Guid? parent)
     {
         HashKey = string.IsNullOrEmpty(title) ? Title : title.CreateMd5();
@@ -46,5 +49,6 @@ public class Post : MongoDocument
         Slug = string.IsNullOrEmpty(slug) ? Slug : slug;
         ModifiedAt = DateTime.Now;
         Parent = parent ?? Guid.Empty;
+        Active = true;
     }
 }
