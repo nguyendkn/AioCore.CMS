@@ -2,6 +2,7 @@ using AioCore.Domain;
 using AioCore.Mongo;
 using AioCore.Services;
 using AioCore.Shared;
+using AioCore.Shared.Extensions;
 using AioCore.Web.Helpers;
 using AioCore.Web.Helpers.HangfireHelpers;
 using AioCore.Web.Jobs.DanTriJob;
@@ -27,6 +28,7 @@ services.AddScoped<ICronJob, DanTriJob>();
 
 var app = builder.Build();
 
+
 app.UseStaticFiles();
 app.UseRouting();
 app.MapBlazorHub();
@@ -34,5 +36,10 @@ app.MapFallbackToPage("/_Host");
 app.UseLoading();
 app.UseJobs(environment);
 app.UseHangfire();
+app.MigrateDatabase<AioCoreContext>((context, provider) =>
+{
+    var logger = provider.GetService<ILogger<AioCoreContextSeed>>();
+    AioCoreContextSeed.SeedAsync(context, logger).Wait();
+});
 
 app.Run();

@@ -1,15 +1,14 @@
 ﻿@page "/category"
-@using AioCore.Shared.Common
 @using AioCore.Services
 @using AioCore.Shared.Common.Enums
 
 @switch (ClientService.GetDeviceType())
 {
     case DeviceType.Desktop:
-        <AioCore.Web.Pages.DesktopPages.Category></AioCore.Web.Pages.DesktopPages.Category>
+        <DesktopCategory></DesktopCategory>
         break;
     case DeviceType.Mobile:
-        <AioCore.Web.Pages.MobilePages.Category></AioCore.Web.Pages.MobilePages.Category>
+        <MobileCategory></MobileCategory>
         break;
 }
 

@@ -13,9 +13,10 @@ public class LoadingMiddleware
         _next = next;
     }
 
-    public async Task Invoke(HttpContext context, 
-        IWebHostEnvironment environment, 
-        IClientService clientService)
+    public async Task Invoke(HttpContext context,
+        IWebHostEnvironment environment,
+        IClientService clientService,
+        ILoggerService loggerService)
     {
         var userClient = clientService.GetClient();
         context.Response.Cookies.Append(RequestHeaders.UserClient, userClient,
@@ -26,10 +27,11 @@ public class LoadingMiddleware
             });
         _ = Task.Run(async () => { await LogPageView(userClient); });
         await _next(context);
-    }
 
-    private async Task LogPageView(string userClient)
-    {
+        async Task LogPageView(string client)
+        {
+            await loggerService.LogPageView(client);
+        }
     }
 }
 

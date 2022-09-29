@@ -1,4 +1,7 @@
-﻿<header>
+﻿@using AioCore.Domain.AggregateModels.CategoryAggregate
+@using AioCore.Domain
+@using AioCore.Domain.AggregateModels.PostAggregate
+<header>
     <div class="header-top wrapper">
 
     </div>
@@ -21,74 +24,14 @@
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
-            <li class="navigation-item">
-                <a href="" class="title active">
-                    Video
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Ảnh
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Tin tức
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Thế giới
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Nhà nông
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Dân việt trò chuyện
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Thể thao
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Pháp luật
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Kinh tế
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Giáo dục
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Đời sống
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Văn hóa - Giải trí
-                </a>
-            </li>
-            <li class="navigation-item">
-                <a href="" class="title">
-                    Bạn đọc
-                </a>
-            </li>
-            <li class="navigation-expand">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </li>
+            @foreach (var category in Categories)
+            {
+                <li class="navigation-item">
+                    <NavLink ActiveClass="active" class="title" Match="NavLinkMatch.All" href="@category.Slug">
+                        @category.Title
+                    </NavLink>
+                </li>
+            }
         </ul>
     </div>
     <div class="ads">
@@ -97,3 +40,21 @@
         </div>
     </div>
 </header>
+
+@code {
+
+    private List<Category> Categories { get; set; } = default!;
+    private List<Post> Posts { get; set; } = default!;
+
+    protected override Task OnInitializedAsync()
+    {
+        Categories = AioCoreContext.CachedCategories.Select(x => x.Value)
+            .Where(x => x.Title.Length < 10).DistinctBy(x => x.Title)
+            .OrderBy(x => x.Title).Take(15).ToList();
+        Posts = AioCoreContext.CachedPosts.Select(x => x.Value)
+            .DistinctBy(x => x.Title).OrderByDescending(x => x.CreatedAt).ToList();
+
+        return base.OnInitializedAsync();
+    }
+
+}

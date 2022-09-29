@@ -1,15 +1,14 @@
 ﻿@page "/"
-@using AioCore.Shared.Common
 @using AioCore.Services
 @using AioCore.Shared.Common.Enums
 
 @switch (_deviceType)
 {
     case DeviceType.Desktop:
-        <AioCore.Web.Pages.DesktopPages.Index></AioCore.Web.Pages.DesktopPages.Index>
+        <DesktopIndex></DesktopIndex>
         break;
     case DeviceType.Mobile:
-        <AioCore.Web.Pages.MobilePages.Index></AioCore.Web.Pages.MobilePages.Index>
+        <MobileIndex></MobileIndex>
         break;
 }
 
