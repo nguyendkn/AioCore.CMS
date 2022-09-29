@@ -1,11 +1,27 @@
 ﻿<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <RouteView RouteData="@routeData" DefaultLayout="@_layoutType"/>
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
+        <LayoutView Layout="@_layoutType">
             <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+
+    [Inject]
+    public IHttpContextAccessor ContextAccessor { get; set; } = default!;
+
+    private Type _layoutType = typeof(MainLayout);
+
+    protected override Task OnInitializedAsync()
+    {
+        var userAgent = ContextAccessor.HttpContext?.Request.Headers["User-Agent"];
+        _layoutType = userAgent.ToString()!.Contains("mobile") ? typeof(MobileLayout) : typeof(MainLayout);
+        return base.OnInitializedAsync();
+    }
+
+}
