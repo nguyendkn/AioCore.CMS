@@ -800,7 +800,6 @@ strong {
 }
 #bottom-bar li .text {
   display: block;
-  color: #6c6e70;
   font: normal 11px RobotoMedium, sans-serif;
 }
 #bottom-bar li.active {

@@ -301,16 +301,6 @@ html body.app .main .grid.highlight .article.grid {
   grid-column-gap: 41px;
   position: relative;
 }
-html body.app .main .grid.highlight .article.grid::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 273px;
-  display: block;
-  width: 0;
-  height: 100%;
-  border-left: 1px solid #eee;
-}
 html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) {
   grid-row-start: 1;
   grid-row-end: 3;

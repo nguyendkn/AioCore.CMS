@@ -1,14 +1,20 @@
-﻿@page "/category"
+﻿@page "/{first}"
+@page "/{first}/{second}"
+@page "/{first}/{second}/{third}"
+@page "/{first}/{second}/{third}/{forth}"
 @using AioCore.Services
 @using AioCore.Shared.Common.Enums
+@using AioCore.Domain
+@using AioCore.Domain.AggregateModels.CategoryAggregate
+@using Newtonsoft.Json
 
 @switch (ClientService.GetDeviceType())
 {
     case DeviceType.Desktop:
-        <DesktopCategory></DesktopCategory>
+        <DesktopCategory Categories="@Categories"></DesktopCategory>
         break;
     case DeviceType.Mobile:
-        <MobileCategory></MobileCategory>
+        <MobileCategory Categories="@Categories"></MobileCategory>
         break;
 }
 
@@ -16,5 +22,28 @@
 
     [Inject]
     public IClientService ClientService { get; set; } = default!;
+
+    [Parameter]
+    public string First { get; set; } = default!;
+
+    [Parameter]
+    public string Second { get; set; } = default!;
+
+    [Parameter]
+    public string Third { get; set; } = default!;
+
+    [Parameter]
+    public string Forth { get; set; } = default!;
+
+    private List<Category> Categories { get; set; } = default!;
+
+    protected override Task OnParametersSetAsync()
+    {
+        var slugs = new List<string> { First, Second, Third, Forth };
+        Categories = AioCoreContext.CachedCategories.Where(x => slugs
+            .Where(y => !string.IsNullOrEmpty(y)).Contains(x.Key))
+            .Select(x => x.Value).ToList();
+        return base.OnParametersSetAsync();
+    }
 
 }

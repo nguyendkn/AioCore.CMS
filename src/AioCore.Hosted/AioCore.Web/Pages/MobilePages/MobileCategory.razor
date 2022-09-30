@@ -1,5 +1,9 @@
-﻿<h3>Category</h3>
+﻿@using AioCore.Domain.AggregateModels.CategoryAggregate
+<h3>Category</h3>
 
 @code {
-    
+
+    [Parameter]
+    public List<Category> Categories { get; set; } = default!;
+
 }
