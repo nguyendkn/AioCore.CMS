@@ -122,6 +122,9 @@ img {
   display: block;
   outline: none;
 }
+img.logo {
+  width: 100px !important;
+}
 
 iframe {
   width: 100%;
@@ -187,6 +190,7 @@ strong {
 }
 
 .left {
+  height: 100%;
   float: left;
 }
 
@@ -209,6 +213,7 @@ strong {
 }
 
 .wrapper {
+  height: 100%;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -548,13 +553,15 @@ strong {
   z-index: 999;
 }
 #header .left {
-  margin-top: -2px;
+  display: flex;
 }
 #header .left .icon {
   margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 #header .left h1 {
-  display: inline-block;
+  display: flex;
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;

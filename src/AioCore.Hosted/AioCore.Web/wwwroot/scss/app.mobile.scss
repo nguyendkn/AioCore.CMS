@@ -136,6 +136,10 @@ img {
   width: 100%;
   display: block;
   outline: none;
+  
+  &.logo {
+    width: 100px !important;
+  }
 }
 
 iframe {
@@ -203,6 +207,7 @@ strong {
 }
 
 .left {
+  height: 100%;
   float: left;
 }
 
@@ -233,6 +238,7 @@ strong {
     clear: both;
   }
 
+  height: 100%;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -647,12 +653,16 @@ strong {
   z-index: 999;
 
   .left {
+    display: flex;
+    
     .icon {
       margin-right: 15px;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     h1 {
-      display: inline-block;
+      display: flex;
       margin-block-start: 0;
       margin-block-end: 0;
       margin-inline-start: 0;
@@ -664,8 +674,6 @@ strong {
       display: inline-block;
       margin-top: 3.5px;
     }
-
-    margin-top: -2px;
   }
 
   ul.right {

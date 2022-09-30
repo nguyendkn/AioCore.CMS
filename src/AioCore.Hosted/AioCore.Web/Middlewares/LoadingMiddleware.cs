@@ -23,7 +23,6 @@ public class LoadingMiddleware
             new CookieOptions
             {
                 SameSite = SameSiteMode.None,
-                Secure = environment.IsProduction()
             });
         _ = Task.Run(async () => { await LogPageView(userClient); });
         await _next(context);
