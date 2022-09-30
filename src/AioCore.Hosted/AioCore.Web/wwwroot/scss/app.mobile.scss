@@ -570,9 +570,28 @@ strong {
   width: 14px;
 }
 
+.time-homepage {
+  margin-top: 40px;
+  border-top: thin solid #ccc;
+  line-height: 36px;
+  font: normal 13px/36px Roboto,sans-serif;
+  color: #6c6e70;
+  padding-right: 0;
+  
+  img {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: -1px;
+    width: 12px;
+  }
+  
+  .time {
+    font: normal 11px/13px Roboto,sans-serif;
+  }
+}
+
 .block-wrapper {
   position: relative;
-  margin-top: 40px;
   z-index: 99;
 }
 
@@ -913,25 +932,18 @@ strong {
     display: inline-block;
     font: normal 13px RobotoMedium, sans-serif;
     color: #6c6e70;
-    margin-top: 8px;
+    margin-top: 10px;
 
     &:not(:last-child) {
       margin-right: 1.5%;
     }
 
-    svg {
-      width: 20px;
-      max-height: 20px;
-      height: auto;
-
-      path {
-        fill: #6c6e70;
-      }
+    i {
+      font-size: 20px;
     }
 
     .text {
       display: block;
-      color: #6c6e70;
       font: normal 11px RobotoMedium, sans-serif;
     }
   }

@@ -1,59 +1,85 @@
 ﻿<ul id="bottom-bar" class="">
-    <li class="bottom-cate active">
-        <a href="javascript:;" rel="nofollow" title="Chuyên mục">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.891" viewBox="0 0 20 14.891">
-                <g id="category" transform="translate(0 0.714)">
-                    <g id="read_x5F_more" transform="translate(0 -0.714)">
-                        <g id="Group_1377">
-                            <path id="Path_674" d="M20,1.907H0V0H20Z" fill="#008837"></path>
-                            <path id="Path_675" d="M12.637,9.907H0V8H12.637Z" transform="translate(0 -1.538)" fill="#008837"></path>
-                            <path id="Path_676" d="M20,17.993H0V16.086H20Z" transform="translate(0 -3.103)" fill="#008837"></path>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            <span class="text">Chuyên mục</span>
-        </a>
-    </li>
-    <li class="bottom-newest-news">
-        <a href="/tin-moi.htm" title="Tin mới">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20.002" viewBox="0 0 20 20.002">
-                <g id="tag" transform="translate(-0.019)">
-                    <g id="Group_1440" data-name="Group 1440" transform="translate(0.019)">
-                        <g id="Group_1439" data-name="Group 1439" transform="translate(0)">
-                            <path id="Path_704" data-name="Path 704" d="M10.445,0,.7,9.761a2.347,2.347,0,0,0,0,3.312l6.231,6.241A2.329,2.329,0,0,0,8.591,20h0a2.329,2.329,0,0,0,1.656-.685l9.77-9.76V0Zm8.011,8.909-9.312,9.3a.776.776,0,0,1-.552.228h0a.776.776,0,0,1-.552-.229l-6.231-6.24a.782.782,0,0,1,0-1.1l9.285-9.3h7.363Z" transform="translate(-0.019)" fill="#6c6e70"></path>
-                        </g>
-                    </g>
-                    <g id="Group_1442" data-name="Group 1442" transform="translate(14.126 4.265)">
-                        <g id="Group_1441" data-name="Group 1441">
-                            <circle id="Ellipse_14" data-name="Ellipse 14" cx="0.814" cy="0.814" r="0.814" fill="#6c6e70"></circle>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            <span class="text">Tin mới</span>
-        </a>
-    </li>
-    <li class="bottom-hot-news">
-        <a href="/tin-nong.htm" title="Tin nóng">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20.97" height="20" viewBox="0 0 20.97 20">
-                <g id="star" transform="translate(0 -10.99)">
-                    <path id="Path_698" data-name="Path 698" d="M20.97,18.74q0-.466-.706-.58l-6.326-.92L11.1,11.507q-.239-.517-.618-.517t-.617.517L7.032,17.241l-6.326.92Q0,18.274,0,18.74a.96.96,0,0,0,.315.6L4.9,23.807l-1.084,6.3a2.047,2.047,0,0,0-.025.252.743.743,0,0,0,.132.447.457.457,0,0,0,.4.183,1.069,1.069,0,0,0,.5-.151l5.658-2.974,5.659,2.974a1.02,1.02,0,0,0,.5.151q.517,0,.517-.63a1.909,1.909,0,0,0-.013-.252l-1.084-6.3,4.574-4.461A.913.913,0,0,0,20.97,18.74Zm-6.641,4.5.907,5.306-4.751-2.508L5.721,28.545l.92-5.306L2.785,19.5,8.1,18.715,10.485,13.9l2.382,4.814,5.319.781Z" transform="translate(0 0)" fill="#6c6e70"></path>
-                </g>
-            </svg>
-            <span class="text">Tin nóng</span>
-        </a>
-    </li>
-    <li class="bottom-media">
-        <a href="/clip.htm" title="Media">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57.424" height="66.997" viewBox="0 0 57.424 66.997">
-                <g id="home_play-button_1_" data-name="home play-button (1)" transform="translate(7.5 5.5)">
-                    <g transform="matrix(1, 0, 0, 1, -7.5, -5.5)">
-                        <path id="Path_912-2" data-name="Path 912" d="M47.127,0V52l42.424-25.88Zm4.067,7.279L81.768,26.1,51.194,44.752Z" transform="translate(-39.63 5.5)" fill="#fff"></path>
-                    </g>
-                </g>
-            </svg>
-            <span class="text">Media</span>
-        </a>
-    </li>
+    @foreach (var navigation in Navigations)
+    {
+        <li class="navigation-item active">
+            <a href="#" rel="nofollow" title="@navigation.Value">
+                <i class="@navigation.Key"></i>
+                <span class="text">@navigation.Value</span>
+            </a>
+        </li>
+    }
+    @* <li class="bottom-cate active"> *@
+    @*     <a href="javascript:;" rel="nofollow" title="Chuyên mục"> *@
+    @*         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.891" viewBox="0 0 20 14.891"> *@
+    @*             <g id="category" transform="translate(0 0.714)"> *@
+    @*                 <g id="read_x5F_more" transform="translate(0 -0.714)"> *@
+    @*                     <g id="Group_1377"> *@
+    @*                         <path id="Path_674" d="M20,1.907H0V0H20Z" fill="#008837"></path> *@
+    @*                         <path id="Path_675" d="M12.637,9.907H0V8H12.637Z" transform="translate(0 -1.538)" fill="#008837"></path> *@
+    @*                         <path id="Path_676" d="M20,17.993H0V16.086H20Z" transform="translate(0 -3.103)" fill="#008837"></path> *@
+    @*                     </g> *@
+    @*                 </g> *@
+    @*             </g> *@
+    @*         </svg> *@
+    @*         <span class="text">Chuyên mục</span> *@
+    @*     </a> *@
+    @* </li> *@
+    @* <li class="bottom-newest-news"> *@
+    @*     <a href="/tin-moi.htm" title="Tin mới"> *@
+    @*         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20.002" viewBox="0 0 20 20.002"> *@
+    @*             <g id="tag" transform="translate(-0.019)"> *@
+    @*                 <g id="Group_1440" data-name="Group 1440" transform="translate(0.019)"> *@
+    @*                     <g id="Group_1439" data-name="Group 1439" transform="translate(0)"> *@
+    @*                         <path id="Path_704" data-name="Path 704" d="M10.445,0,.7,9.761a2.347,2.347,0,0,0,0,3.312l6.231,6.241A2.329,2.329,0,0,0,8.591,20h0a2.329,2.329,0,0,0,1.656-.685l9.77-9.76V0Zm8.011,8.909-9.312,9.3a.776.776,0,0,1-.552.228h0a.776.776,0,0,1-.552-.229l-6.231-6.24a.782.782,0,0,1,0-1.1l9.285-9.3h7.363Z" transform="translate(-0.019)" fill="#6c6e70"></path> *@
+    @*                     </g> *@
+    @*                 </g> *@
+    @*                 <g id="Group_1442" data-name="Group 1442" transform="translate(14.126 4.265)"> *@
+    @*                     <g id="Group_1441" data-name="Group 1441"> *@
+    @*                         <circle id="Ellipse_14" data-name="Ellipse 14" cx="0.814" cy="0.814" r="0.814" fill="#6c6e70"></circle> *@
+    @*                     </g> *@
+    @*                 </g> *@
+    @*             </g> *@
+    @*         </svg> *@
+    @*         <span class="text">Tin mới</span> *@
+    @*     </a> *@
+    @* </li> *@
+    @* <li class="bottom-hot-news"> *@
+    @*     <a href="/tin-nong.htm" title="Tin nóng"> *@
+    @*         <svg xmlns="http://www.w3.org/2000/svg" width="20.97" height="20" viewBox="0 0 20.97 20"> *@
+    @*             <g id="star" transform="translate(0 -10.99)"> *@
+    @*                 <path id="Path_698" data-name="Path 698" d="M20.97,18.74q0-.466-.706-.58l-6.326-.92L11.1,11.507q-.239-.517-.618-.517t-.617.517L7.032,17.241l-6.326.92Q0,18.274,0,18.74a.96.96,0,0,0,.315.6L4.9,23.807l-1.084,6.3a2.047,2.047,0,0,0-.025.252.743.743,0,0,0,.132.447.457.457,0,0,0,.4.183,1.069,1.069,0,0,0,.5-.151l5.658-2.974,5.659,2.974a1.02,1.02,0,0,0,.5.151q.517,0,.517-.63a1.909,1.909,0,0,0-.013-.252l-1.084-6.3,4.574-4.461A.913.913,0,0,0,20.97,18.74Zm-6.641,4.5.907,5.306-4.751-2.508L5.721,28.545l.92-5.306L2.785,19.5,8.1,18.715,10.485,13.9l2.382,4.814,5.319.781Z" transform="translate(0 0)" fill="#6c6e70"></path> *@
+    @*             </g> *@
+    @*         </svg> *@
+    @*         <span class="text">Tin nóng</span> *@
+    @*     </a> *@
+    @* </li> *@
+    @* <li class="bottom-media"> *@
+    @*     <a href="/clip.htm" title="Media"> *@
+    @*         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57.424" height="66.997" viewBox="0 0 57.424 66.997"> *@
+    @*             <g id="home_play-button_1_" data-name="home play-button (1)" transform="translate(7.5 5.5)"> *@
+    @*                 <g transform="matrix(1, 0, 0, 1, -7.5, -5.5)"> *@
+    @*                     <path id="Path_912-2" data-name="Path 912" d="M47.127,0V52l42.424-25.88Zm4.067,7.279L81.768,26.1,51.194,44.752Z" transform="translate(-39.63 5.5)" fill="#fff"></path> *@
+    @*                 </g> *@
+    @*             </g> *@
+    @*         </svg> *@
+    @*         <span class="text">Media</span> *@
+    @*     </a> *@
+    @* </li> *@
 </ul>
+
+@code {
+    public List<KeyValuePair<string, string>> Navigations { get; set; } = default!;
+
+    protected override Task OnInitializedAsync()
+    {
+        Navigations = new List<KeyValuePair<string, string>>
+        {
+            new("fa-duotone fa-bars", "Chuyên mục"),
+            new("fa-duotone fa-tags", "Tin mới"),
+            new("fa-duotone fa-star", "Tin nóng"),
+            new("fa-solid fa-play", "Media")
+        };
+        return base.OnInitializedAsync();
+    }
+
+}
