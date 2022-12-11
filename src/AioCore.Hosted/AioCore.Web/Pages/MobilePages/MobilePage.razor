@@ -1,0 +1,118 @@
+﻿@using AioCore.Domain.AggregateModels.PostAggregate
+@using AioCore.Domain.AggregateModels.CategoryAggregate
+@using AioCore.Domain
+<style>
+    #main-wrapper  {
+        padding: 0 !important;
+    }
+</style>
+
+<section class="block-wrapper">
+    <div class="container">
+
+        <section id="content">
+
+            <div id="main-wrapper">
+
+                <div class="news-detail-container count-cmt  loadedcmt" data-newsid="20221208211915783">
+
+                    <h1 class="detail title" style="display:none" data-role="title">
+                        @Post.Title
+                    </h1>
+                    <h2 class="detail title" data-role="title">
+                        @Post.Title
+                    </h2>
+
+                    <h2 class="detail sapo" data-role="sapo">@Post.Description</h2>
+
+                    <div class="entry-body clearafter" data-role="content">
+                        @((MarkupString)(Post.Content ?? string.Empty))
+                    </div>
+                    <div class="detail tags">
+                        <p class="tags-title">Từ khóa:</p>
+
+                        @if (Tags is not null)
+                        {
+                            <ul>
+                                @foreach (var tag in Tags)
+                                {
+                                    <li>
+                                        <a>@tag</a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="separator-large full-width"></div>
+
+            @if (Posts.Any())
+            {
+                <div class="special-box">
+                    <div class="special-box-title full-width">
+                        <div class="wrapper">Tin Cùng Chuyên Mục</div>
+                    </div>
+                    <div class="special-box-content grid">
+                        <ul>
+                            @foreach (var post in Posts)
+                            {
+                                <li >
+                                    <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")" title="@post.Title" class="img">
+                                        <img src="@post.Thumbnail" alt="@post.Title">
+                                    </a>
+                                    <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")" title="@post.Title" class="title">
+                                        @post.Title
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+
+            <div class="separator-large full-width"></div>
+            <div class="special-box">
+                <div class="special-box-content grid">
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</section>
+<div class="special-box">
+    <div class="special-box-content grid">
+    </div>
+</div>
+
+@code
+{
+
+    [Parameter]
+    public Post Post { get; set; } = default!;
+
+    [Parameter]
+    public List<Post> Posts { get; set; } = default!;
+
+    [Inject]
+    public AioCoreContext Context { get; set; } = default!;
+
+    private List<string>? Tags { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Tags = Post.Keyword?.Split(",").ToList();
+        await base.OnParametersSetAsync();
+    }
+
+    private Category? GetCategory(Guid parent)
+    {
+        return Context.Categories.FirstOrDefault(x => x.Id.Equals(parent)) ?? null;
+    }
+
+}

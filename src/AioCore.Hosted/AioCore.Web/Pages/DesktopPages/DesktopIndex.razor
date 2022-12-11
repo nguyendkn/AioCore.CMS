@@ -7,38 +7,38 @@
     <article class="article highlight">
         <article class="article-item">
             <div class="article-thumb">
-                <a href="@($"{GetCategory(Posts[0].Parent).Slug}/{Posts[0].Slug}")">
+                <a href="/bai-viet/@($"{GetCategory(Posts[0].Parent)?.Slug}/{Posts[0].Slug}")">
                     <img loading="lazy" width="516" height="344" alt="@Posts[0].Title"
                          src="@Posts[0].Thumbnail">
                 </a>
             </div>
             <div class="article-content">
                 <h3 class="article-title text-ico red">
-                    <a href="@($"{GetCategory(Posts[0].Parent).Slug}/{Posts[0].Slug}")">@Posts[0].Title</a>
+                    <a href="/bai-viet/@($"{GetCategory(Posts[0].Parent)?.Slug}/{Posts[0].Slug}")">@Posts[0].Title</a>
                 </h3>
                 <div class="article-excerpt">
-                    <a href="@($"{GetCategory(Posts[0].Parent).Slug}/{Posts[0].Slug}")">@Posts[0].Description</a>
+                    <a href="/bai-viet/@($"{GetCategory(Posts[0].Parent)?.Slug}/{Posts[0].Slug}")">@Posts[0].Description</a>
                 </div>
             </div>
         </article>
         <article class="article-item">
             <div class="article-thumb">
-                <a href="@($"{GetCategory(Posts[1].Parent).Slug}/{Posts[1].Slug}")">
+                <a href="/bai-viet/@($"{GetCategory(Posts[1].Parent)?.Slug}/{Posts[1].Slug}")">
                     <img loading="lazy" width="234" height="156" alt="@Posts[1].Title" src="@Posts[1].Thumbnail">
                 </a>
             </div>
             <h3 class="article-title">
-                <a href="@($"{GetCategory(Posts[1].Parent).Slug}/{Posts[1].Slug}")">@Posts[1].Title</a>
+                <a href="/bai-viet/@($"{GetCategory(Posts[1].Parent)?.Slug}/{Posts[1].Slug}")">@Posts[1].Title</a>
             </h3>
         </article>
         <article class="article-item">
             <div class="article-thumb">
-                <a href="@($"{GetCategory(Posts[2].Parent).Slug}/{Posts[2].Slug}")">
+                <a href="/bai-viet/@($"{GetCategory(Posts[2].Parent)?.Slug}/{Posts[2].Slug}")">
                     <img loading="lazy" width="234" height="156" alt="@Posts[2].Title" src="@Posts[2].Thumbnail">
                 </a>
             </div>
             <h3 class="article-title">
-                <a href="@($"{GetCategory(Posts[2].Parent).Slug}/{Posts[2].Slug}")">
+                <a href="/bai-viet/@($"{GetCategory(Posts[2].Parent)?.Slug}/{Posts[2].Slug}")">
                     @Posts[2].Title
                 </a>
             </h3>
@@ -56,11 +56,11 @@
                             </a>
                         </div>
                         <h3 class="article-title">
-                            <a href="@($"{GetCategory(Posts[i].Parent).Slug}/{Posts[i].Slug}")">@Posts[i].Title</a>
+                            <a href="/bai-viet/@($"{GetCategory(Posts[i].Parent)?.Slug}/{Posts[i].Slug}")">@Posts[i].Title</a>
                         </h3>
                     </div>
                     <div class="article-thumb">
-                        <a href="@($"{GetCategory(Posts[i].Parent).Slug}/{Posts[i].Slug}")">
+                        <a href="/bai-viet/@($"{GetCategory(Posts[i].Parent)?.Slug}/{Posts[i].Slug}")">
                             <img loading="lazy" width="99" height="66" alt="@Posts[i].Title" src="@Posts[i].Thumbnail">
                         </a>
                     </div>
@@ -75,7 +75,7 @@
         {
             <article class="article-item">
                 <div class="article-thumb">
-                    <a href="@($"{GetCategory(post.Parent).Slug}/{post.Slug}")">
+                    <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
                         <img loading="lazy" width="233" height="155" alt="@post.Title" src="@post.Thumbnail" class="entered loaded">
                         <div class="article-ico">
                             <i class="photo"></i>
@@ -84,10 +84,10 @@
                 </div>
                 <div class="article-content">
                     <h3 class="article-title">
-                        <a href="@($"{GetCategory(post.Parent).Slug}/{post.Slug}")">@post.Title</a>
+                        <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
                     </h3>
                     <div class="article-excerpt">
-                        <a href="@($"{GetCategory(post.Parent).Slug}/{post.Slug}")">@post.Description</a>
+                        <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Description</a>
                     </div>
                 </div>
             </article>
@@ -103,47 +103,35 @@
                         <h2 class="title">
                             <a href="@category.Slug">@category.Title</a>
                         </h2>
-                        @{
-                            var categoriesChild = GetCategoriesChild(category.Id);
-                            var maxLength = categoriesChild.Count > 3 ? 3 : categoriesChild.Count;
-                            <ol class="category-nav">
-                                @foreach (var categoryChild in categoriesChild.Take(maxLength))
-                                {
-                                    <li>
-                                        <a href="@categoryChild.Slug">@category.Title</a>
-                                    </li>
-                                }
-                            </ol>
-                        }
                     </div>
                     <div class="category-container">
                         @{
                             <article class="article-item" data-content-name="home-category_36" data-content-piece="home-category_36-position_1" data-content-target="/the-gioi/nga-len-tieng-ve-2-duong-ong-khi-dot-toi-duc-bi-ro-ri-20220927201317005.htm">
                                 <div class="article-thumb">
-                                    <a href="@posts[0].Slug">
+                                    <a href="/bai-viet/@posts[0].Slug">
                                         <img loading="lazy" width="192" height="128" alt="@posts[0].Title"
                                              src="@posts[0].Thumbnail" class="entered loaded">
                                     </a>
                                 </div>
                                 <div class="article-content">
                                     <h3 class="article-title">
-                                        <a href="@($"{GetCategory(posts[0].Parent).Slug}/{posts[0].Slug}")">@posts[0].Title</a>
+                                        <a href="/bai-viet/@($"{GetCategory(posts[0].Parent)?.Slug}/{posts[0].Slug}")">@posts[0].Title</a>
                                     </h3>
                                     <div class="article-excerpt">
-                                        <a href="@($"{GetCategory(posts[0].Parent).Slug}/{posts[0].Slug}")">@posts[0].Description</a>
+                                        <a href="/bai-viet/@($"{GetCategory(posts[0].Parent)?.Slug}/{posts[0].Slug}")">@posts[0].Description</a>
                                     </div>
                                 </div>
                             </article>
-                            @for (var i = 1; i <= 1; i++)
+                            @for (var i = 0; i < (posts.Count < 4 ? posts.Count : 5); i++)
                             {
                                 <article class="article-item">
                                     <div class="article-thumb">
-                                        <a href="@($"{GetCategory(posts[i].Parent).Slug}/{posts[i].Slug}")">
+                                        <a href="/bai-viet/@($"{GetCategory(posts[i].Parent)?.Slug}/{posts[i].Slug}")">
                                             <img loading="lazy" width="90" height="60" alt="@posts[i].Title" src="@posts[i].Thumbnail" class="entered loaded">
                                         </a>
                                     </div>
                                     <h3 class="article-title">
-                                        <a href="@($"{GetCategory(posts[i].Parent).Slug}/{posts[i].Slug}")">@posts[i].Title</a>
+                                        <a href="/bai-viet/@($"{GetCategory(posts[i].Parent)?.Slug}/{posts[i].Slug}")">@posts[i].Title</a>
                                     </h3>
                                 </article>
                             }
@@ -175,13 +163,13 @@
     {
         var categories = AioCoreContext.CachedPosts.Select(x => x.Value)
             .GroupBy(x => x.Parent).Where(x => x.Count().Equals(postCount));
-        return new ConcurrentDictionary<Category, List<Post>>(categories.Select(x => new KeyValuePair<Category, List<Post>>(GetCategory(x.Key), x.ToList())));
+        return new ConcurrentDictionary<Category, List<Post>>(categories.Select(x => new KeyValuePair<Category?, List<Post>>(GetCategory(x.Key), x.ToList()))!);
     }
 
-    private Category GetCategory(Guid parent)
+    private Category? GetCategory(Guid parent)
     {
         return AioCoreContext.CachedCategories.Select(x => x.Value)
-            .FirstOrDefault(x => x.Id.Equals(parent)) ?? default!;
+            .FirstOrDefault(x => x.Id.Equals(parent)) ?? null;
     }
 
     private List<Category> GetCategoriesChild(Guid categoryId)

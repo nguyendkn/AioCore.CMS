@@ -12,11 +12,11 @@ public class AioCoreContext : MongoContext
 
     public MongoSet<Category> Categories { get; set; } = default!;
 
-    public static ConcurrentDictionary<string, Category> CachedCategories { get; set; } = default!;
+    public static ConcurrentDictionary<string, Category> CachedCategories { get; set; } = new();
 
     public MongoSet<Post> Posts { get; set; } = default!;
 
-    public static ConcurrentDictionary<string, Post> CachedPosts { get; set; } = default!;
+    public static ConcurrentDictionary<string, Post> CachedPosts { get; set; } = new();
 
     public MongoSet<PageView> PageViews { get; set; } = default!;
 }

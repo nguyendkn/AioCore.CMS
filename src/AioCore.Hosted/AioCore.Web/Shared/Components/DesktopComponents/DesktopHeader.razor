@@ -23,13 +23,16 @@
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
-            @foreach (var category in Categories)
+            @if (Categories.Any())
             {
-                <li class="navigation-item">
-                    <NavLink ActiveClass="active" class="title" Match="NavLinkMatch.All" href="@category.Slug">
-                        @category.Title
-                    </NavLink>
-                </li>
+                @foreach (var category in Categories)
+                {
+                    <li class="navigation-item">
+                        <NavLink ActiveClass="active" class="title" Match="NavLinkMatch.All" href="@category.Slug">
+                            @category.Title
+                        </NavLink>
+                    </li>
+                }
             }
         </ul>
     </div>
@@ -42,8 +45,11 @@
 
 @code {
 
-    private List<Category> Categories { get; set; } = default!;
-    private List<Post> Posts { get; set; } = default!;
+    private List<Category> Categories { get; set; } = new();
+    private List<Post> Posts { get; set; } = new();
+
+    [Inject]
+    public AioCoreContext Context { get; set; } = default!;
 
     protected override Task OnInitializedAsync()
     {

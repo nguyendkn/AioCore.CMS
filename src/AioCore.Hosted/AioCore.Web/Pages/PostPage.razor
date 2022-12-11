@@ -1,0 +1,68 @@
+﻿@page "/bai-viet/{first}"
+@page "/bai-viet/{first}/{second}"
+@page "/bai-viet/{first}/{second}/{third}"
+@page "/bai-viet/{first}/{second}/{third}/{forth}"
+@using AioCore.Services
+@using AioCore.Shared.Common.Enums
+@using AioCore.Domain
+@using AioCore.Domain.AggregateModels.CategoryAggregate
+@using AioCore.Domain.AggregateModels.PostAggregate
+@using AioCore.Mongo
+@using MongoDB.Driver
+
+<PageTitle>@Post?.Title</PageTitle>
+
+@switch (_deviceType)
+{
+    case DeviceType.Desktop:
+        <DesktopPage Posts="@Posts" Post="@Post"></DesktopPage>
+        break;
+    case DeviceType.Mobile:
+        <MobilePage Posts="@Posts" Post="@Post"></MobilePage>
+        break;
+}
+
+@code {
+
+    [Inject]
+    public IClientService ClientService { get; set; } = default!;
+
+    [Inject]
+    public AioCoreContext Context { get; set; } = default!;
+
+    [Parameter]
+    public string First { get; set; } = default!;
+
+    [Parameter]
+    public string Second { get; set; } = default!;
+
+    [Parameter]
+    public string Third { get; set; } = default!;
+
+    [Parameter]
+    public string Forth { get; set; } = default!;
+
+    private DeviceType _deviceType = DeviceType.Undefined;
+    private List<Category> Categories { get; set; } = default!;
+    private Category? Category { get; set; } = new();
+    private Post? Post { get; set; } = new();
+    private List<Post> Posts { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var path = new List<string> { First, Second, Third, Forth }.LastOrDefault(x => !string.IsNullOrEmpty(x));
+        Category = await Context.Categories.FirstOrDefaultAsync(x => x.Slug != null && x.Slug.Contains(First));
+        Post = await Context.Posts.FirstOrDefaultAsync(x => x.Slug.Equals(path));
+        Posts = await Context.Posts.Where(x => Category != null && x.Parent.Equals(Category.Id)).Take(4).ToListAsync();
+
+        await base.OnParametersSetAsync();
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        _deviceType = ClientService.GetDeviceType();
+        Console.WriteLine(_deviceType);
+        return base.OnInitializedAsync();
+    }
+
+}

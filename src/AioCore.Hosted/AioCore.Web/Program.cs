@@ -6,6 +6,7 @@ using AioCore.Shared.Extensions;
 using AioCore.Web.Helpers;
 using AioCore.Web.Helpers.HangfireHelpers;
 using AioCore.Web.Jobs.DanTriJob;
+using AioCore.Web.Jobs.SyncCacheJob;
 using AioCore.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,7 @@ services.AddHangfireServer(appSettings.MongoConfigs);
 services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 services.RegisterServices();
 services.AddScoped<ICronJob, DanTriJob>();
+services.AddScoped<ICronJob, SyncCacheJob>();
 
 var app = builder.Build();
 

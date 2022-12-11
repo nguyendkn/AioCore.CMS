@@ -36,18 +36,18 @@
                     var thumbnailHeight = (i == 0) ? 344 : 168;
                     <article class="article-item">
                         <div class="article-thumb">
-                            <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
+                            <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
                                 <img loading="lazy" width="@thumbnailWidth" height="@thumbnailHeight" alt="@post.Title" src="@post.Thumbnail">
                             </a>
                         </div>
                         <div class="article-content">
                             <h3 class="article-title">
-                                <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
+                                <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
                             </h3>
                             @if (i == 0)
                             {
                                 <div class="article-excerpt">
-                                    <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Description</a>
+                                    <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Description</a>
                                 </div>
                             }
                         </div>
@@ -63,7 +63,7 @@
                 {
                     <article class="article-item">
                         <div class="article-thumb">
-                            <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
+                            <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
                                 <img loading="lazy" width="186" height="124" alt="@post.Title" src="@post.Thumbnail">
                                 <div class="article-ico">
                                     <i class="photo"></i>
@@ -71,7 +71,7 @@
                             </a>
                         </div>
                         <h3 class="article-title">
-                            <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
+                            <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
                         </h3>
                     </article>
                 }
@@ -89,16 +89,16 @@
                 {
                     <article class="article-item">
                         <div class="article-thumb">
-                            <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
+                            <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">
                                 <img loading="lazy" width="252" height="168" alt="@post.Title" src="@post.Thumbnail">
                             </a>
                         </div>
                         <div class="article-content">
                             <h3 class="article-title">
-                                <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
+                                <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Title</a>
                             </h3>
                             <div class="article-excerpt">
-                                <a href="@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Description</a>
+                                <a href="/bai-viet/@($"{GetCategory(post.Parent)?.Slug}/{post.Slug}")">@post.Description</a>
                             </div>
                         </div>
                     </article>

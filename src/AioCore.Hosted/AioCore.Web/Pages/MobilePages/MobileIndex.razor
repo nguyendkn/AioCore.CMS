@@ -7,16 +7,16 @@
         <div class="box-event-big">
             <div class="item">
                 <h3>
-                    <a title="@Posts[0].Title" class="title" href="@($"{GetCategory(Posts[0].Parent).Slug}/{Posts[0].Slug}")">@Posts[0].Title</a>
+                    <a title="@Posts[0].Title" class="title" href="/bai-viet/@($"{GetCategory(Posts[0].Parent)?.Slug}/{Posts[0].Slug}")">@Posts[0].Title</a>
                 </h3>
                 <div class="box-img">
-                    <a class="img" title="@Posts[0].Title" href="@($"{GetCategory(Posts[0].Parent).Slug}/{Posts[0].Slug}")">
+                    <a class="img" title="@Posts[0].Title" href="/bai-viet/@($"{GetCategory(Posts[0].Parent)?.Slug}/{Posts[0].Slug}")">
                         <img src="@Posts[0].Thumbnail" alt="@Posts[0].Title">
                     </a>
                     <div class="box-title">
                         <div class="catetime">
                             <span class="cate">
-                                <a href="@GetCategory(Posts[0].Parent).Slug" title="@GetCategory(Posts[0].Parent).Title">@GetCategory(Posts[0].Parent).Title</a>
+                                <a href="/bai-viet/@GetCategory(Posts[0].Parent)?.Slug" title="@GetCategory(Posts[0].Parent)?.Title">@GetCategory(Posts[0].Parent)?.Title</a>
                             </span>
                             <span class="time need-get-timeago" title="@Posts[0].CreatedAt"></span>
                         </div>
@@ -30,7 +30,7 @@
             {
                 <li class="item">
                     <h3>
-                        <a title="@Posts[i].Title" class="title" href="@($"{GetCategory(Posts[i].Parent).Slug}/{Posts[i].Slug}")">@Posts[i].Title</a>
+                        <a title="@Posts[i].Title" class="title" href="/bai-viet/@($"{GetCategory(Posts[i].Parent)?.Slug}/{Posts[i].Slug}")">@Posts[i].Title</a>
                     </h3>
                     <div class="catetime">
                         <span class="time need-get-timeago" title="@Posts[i].CreatedAt"></span>
@@ -48,14 +48,14 @@
             <li>
                 <div class="left">
                     <h3 class="title">
-                        <a href="@($"{GetCategory(Posts[i].Parent).Slug}/{Posts[i].Slug}")" title="@Posts[i].Title">@Posts[i].Title</a>
+                        <a href="/bai-viet/@($"{GetCategory(Posts[i].Parent)?.Slug}/{Posts[i].Slug}")" title="@Posts[i].Title">@Posts[i].Title</a>
                     </h3>
                     <div class="info">
                         <a href="/anh.htm">Ảnh</a>
                         <span class="time pub-date loaded" title="@Posts[i].CreatedAt">@Posts[i].CreatedAt.ToString("dd/MM/yyyy")</span>
                     </div>
                 </div>
-                <a href="@($"{GetCategory(Posts[i].Parent).Slug}/{Posts[i].Slug}")" title="@Posts[i].Title" class="right img">
+                <a href="/bai-viet/@($"{GetCategory(Posts[i].Parent)?.Slug}/{Posts[i].Slug}")" title="@Posts[i].Title" class="right img">
                     <img src="@Posts[i].Thumbnail" alt="@Posts[i].Title">
                 </a>
             </li>
@@ -80,10 +80,10 @@
         return base.OnInitializedAsync();
     }
     
-    private Category GetCategory(Guid parent)
+    private Category? GetCategory(Guid parent)
     {
         return AioCoreContext.CachedCategories.Select(x => x.Value)
-            .FirstOrDefault(x => x.Id.Equals(parent)) ?? default!;
+            .FirstOrDefault(x => x.Id.Equals(parent)) ?? null;
     }
 
 }

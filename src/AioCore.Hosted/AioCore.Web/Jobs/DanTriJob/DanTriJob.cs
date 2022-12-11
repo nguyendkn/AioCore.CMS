@@ -32,10 +32,17 @@ public class DanTriJob : ICronJob
 
     public async Task<string> Run()
     {
-        var categories = await Categories();
-        await UpdateCategories(categories);
-        await GoogleNews(categories);
-        return "OK";
+        try
+        {
+            var categories = await Categories();
+            await UpdateCategories(categories);
+            await GoogleNews(categories);
+            return "OK";
+        }
+        catch (Exception e)
+        {
+            return e.Message;
+        }
     }
 
     private async Task<List<Category>> Categories()
@@ -73,6 +80,7 @@ public class DanTriJob : ICronJob
             category = await UpdateCategory(category);
             await _context.Categories.UpdateAsync(category.Id, category);
             updatedCategories.Add(category);
+            Thread.Sleep(2000);
         }
 
         return updatedCategories;
@@ -106,13 +114,14 @@ public class DanTriJob : ICronJob
                 post = await UpdatePost(post, categories);
                 await _context.Posts.UpdateAsync(post.Id, post);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 post.Active = false;
                 if (ex.Message.Contains("429"))
                     post = await UpdatePost(post, categories);
                 await _context.Posts.UpdateAsync(post.Id, post);
             }
+            Thread.Sleep(2000);
         }
     }
 
@@ -126,6 +135,7 @@ public class DanTriJob : ICronJob
                 .Where(x => slugItems is not null && slugItems.Contains(x.Slug));
             category.Update(categoryMatches.Select(x => x.Id).ToList());
             await _context.Categories.UpdateAsync(category.Id, category);
+            Thread.Sleep(2000);
         }
     }
 
@@ -154,7 +164,7 @@ public class DanTriJob : ICronJob
             category.Update(title, description, thumbnail, keywords, slug);
             return category;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             if (ex.Message.Contains("429"))
                 await UpdateCategory(category);
@@ -169,8 +179,17 @@ public class DanTriJob : ICronJob
         var html = await httpClient.GetStringAsync(news.Source);
         html = HttpUtility.HtmlDecode(html);
         html = Regex.Replace(html, "(<style.+?</style>)|(<script.+?</script>)", string.Empty);
+
+        var match = Regex.Match(html, "src=\"data.*?\"");
+        if (match.Success)
+        {
+            html = Regex.Replace(html, "src=\"data.*?\"", string.Empty);
+            html = html.Replace("data-src", "src");
+        }
+        
         var htmlDocument = new HtmlDocument();
         htmlDocument.LoadHtml(html);
+
         var slugItems = news.Source?.Replace(".htm", string.Empty).Split('/').ToList();
         var slug = slugItems?.LastOrDefault();
         var title = htmlDocument.DocumentNode

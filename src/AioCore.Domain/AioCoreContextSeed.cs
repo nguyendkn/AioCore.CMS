@@ -1,6 +1,5 @@
 ﻿using System.Collections.Concurrent;
 using AioCore.Domain.AggregateModels.CategoryAggregate;
-using AioCore.Shared.Extensions;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using Polly;

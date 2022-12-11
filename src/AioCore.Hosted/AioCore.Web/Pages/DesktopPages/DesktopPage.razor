@@ -1,0 +1,116 @@
+﻿@using AioCore.Domain.AggregateModels.PostAggregate
+
+<div class="wrapmain">
+    <div class="main-contain main-sizel">
+        <div class="detail-main">
+
+
+            <div class="dt-title">
+                <h1>
+                    <span class="title" data-role="title" style="display: none">
+                        @Post.Title
+                    </span>
+                </h1>
+                <h2>
+                    <span class="title" data-role="title">
+                        @Post.Title
+                    </span>
+                </h2>
+            </div>
+            <div class="sticky-start"></div>
+
+            <div class="sapo" data-role="sapo">
+                @Post.Description
+            </div>
+
+            <div class="adscode">
+                <div id="zone-kdimezx5">
+                    <div id="share-kdpss2yk"></div>
+                </div>
+            </div>
+
+            <div class="dt-content">
+
+                <div class="entry-body dtdefault clearfix" data-role="content">
+                    @((MarkupString)(Post.Content ?? string.Empty))
+                </div>
+
+                <div class="author">
+
+                </div>
+                <div class="sticky-end"></div>
+
+                <div class="adscode">
+                    <div id="zone-k57lyp1i">
+                        <div id="share-k57lyr4c">
+                            <div id="placement-kgg950c2" revenue="cpm">
+                                <div id="banner-k57lyp1i-kgg9513u" style="min-height: 10px; min-width: 10px;">
+                                    <div id="slot-1-k57lyp1i-kgg9513u">
+                                        <ins class="3b35b82f" data-key="80485e64ecde96ada24d856175bd3b47" id="3b35b82f-80485e64ecde96ada24d856175bd3b47-1-4042" style="text-decoration: none; margin: 0px; padding: 0px; display: block; background: transparent;">
+                                            <ins id="3b35b82f-80485e64ecde96ada24d856175bd3b47-1-4042-1" style="text-decoration: none; margin: 0px auto; padding: 0px; display: block; background: transparent; position: relative;"></ins>
+                                        </ins>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag">
+
+                    <div class="tags">
+                        <div class="tags-title">Từ khóa:</div>
+                        <ul data-role="tags">
+                            @if (Tags is not null)
+                            {
+                                @foreach (var tag in Tags)
+                                {
+                                    <li>
+                                        <a title="@tag">@tag</a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="adscode">
+                <div id="zone-kbiu767v">
+                    <div id="share-kbiu76v7">
+                        <div id="placement-l8bbqyvc" revenue="cpm">
+                            <div id="banner-kbiu767v-l8bbqzx3" style="min-height: 10px; min-width: 10px;">
+                                <div id="slot-1-kbiu767v-l8bbqzx3">
+                                    <ins class="3b35b82f" data-key="f0a202a0c47fe9d3f75c8220a29fe20e" id="3b35b82f-f0a202a0c47fe9d3f75c8220a29fe20e-3-5010" style="text-decoration: none; margin: 0px; padding: 0px; display: block; background: transparent;">
+                                        <ins id="3b35b82f-f0a202a0c47fe9d3f75c8220a29fe20e-3-5010-1" style="text-decoration: none; margin: 0px auto; padding: 0px; display: block; background: transparent; position: relative;"></ins>
+                                    </ins>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public Post Post { get; set; } = default!;
+
+    [Parameter]
+    public List<Post> Posts { get; set; } = default!;
+
+    private List<string>? Tags { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Tags = Post.Keyword?.Split(",").ToList();
+        await base.OnParametersSetAsync();
+    }
+
+}

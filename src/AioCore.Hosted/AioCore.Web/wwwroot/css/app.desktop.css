@@ -109,19 +109,19 @@ html body.app header .ads {
   padding: 15px 0;
   background: rgba(243, 243, 243, 0.31);
 }
-html body.app .main {
+html body.app .main.desktop {
   margin-bottom: 45px;
   margin-top: 15px;
 }
-html body.app .main .grid.highlight {
+html body.app .main.desktop .grid.highlight {
   display: grid;
   grid-template-columns: calc(100% - 340px) 300px;
   grid-gap: 40px;
 }
-html body.app .main .grid.highlight .article.highlight {
+html body.app .main.desktop .grid.highlight .article.highlight {
   position: relative;
 }
-html body.app .main .grid.highlight .article.highlight::before {
+html body.app .main.desktop .grid.highlight .article.highlight::before {
   content: "";
   display: block;
   position: absolute;
@@ -131,43 +131,43 @@ html body.app .main .grid.highlight .article.highlight::before {
   height: 100%;
   border-left: 1px solid #eee;
 }
-html body.app .main .grid.highlight .article.highlight::after {
+html body.app .main.desktop .grid.highlight .article.highlight::after {
   content: "";
   display: block;
   clear: both;
 }
-html body.app .main .grid.highlight .article.highlight .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.highlight .article.highlight .article-item:not(:nth-child(1)) {
   float: left;
   width: calc(100% - 556px);
 }
-html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) {
+html body.app .main.desktop .grid.highlight .article.highlight .article-item:nth-child(1) {
   float: right;
   width: 516px;
 }
-html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-title {
+html body.app .main.desktop .grid.highlight .article.highlight .article-item:nth-child(1) .article-title {
   font-size: 24px;
   line-height: 34px;
 }
-html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-title.text-ico a::before {
+html body.app .main.desktop .grid.highlight .article.highlight .article-item:nth-child(1) .article-title.text-ico a::before {
   top: -4px;
 }
-html body.app .main .grid.highlight .article.highlight .article-item:nth-child(1) .article-excerpt {
+html body.app .main.desktop .grid.highlight .article.highlight .article-item:nth-child(1) .article-excerpt {
   margin-top: 12px;
 }
-html body.app .main .grid.highlight .article.highlight .article-item:nth-child(3) {
+html body.app .main.desktop .grid.highlight .article.highlight .article-item:nth-child(3) {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #eee;
 }
-html body.app .main .grid.highlight .article.highlight .article-title {
+html body.app .main.desktop .grid.highlight .article.highlight .article-title {
   font-size: 16px;
   line-height: 22px;
   margin: 12px 0 0;
 }
-html body.app .main .grid.highlight .article.special {
+html body.app .main.desktop .grid.highlight .article.special {
   position: relative;
 }
-html body.app .main .grid.highlight .article.special::before {
+html body.app .main.desktop .grid.highlight .article.special::before {
   content: "";
   display: block;
   position: absolute;
@@ -177,49 +177,49 @@ html body.app .main .grid.highlight .article.special::before {
   height: 100%;
   border-left: 1px solid #eee;
 }
-html body.app .main .grid.highlight .article.special .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.highlight .article.special .article-item:not(:nth-child(1)) {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid #eee;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container {
   grid-template-columns: calc(100% - 140px) 120px;
   grid-gap: 20px;
   row-gap: 10px;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-category a {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-category a {
   font-weight: 600;
   font-size: 12px;
   line-height: 140%;
   text-transform: uppercase;
   color: #bd975f;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-avatar {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-avatar {
   display: unset;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-avatar a {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-avatar a {
   justify-content: center;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-avatar a i {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-avatar a i {
   width: 88px;
   height: 88px;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-comment {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-comment {
   justify-content: start;
   align-items: unset;
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-comment svg {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-comment svg {
   margin: 0 10px 0 0;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-author {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-author {
   width: 100%;
   text-align: center;
   color: #25282b;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-author .author-name {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-author .author-name {
   display: block;
   font-weight: 400;
   font-size: 11px;
@@ -227,29 +227,29 @@ html body.app .main .grid.highlight .article.special .article-item.blog .article
   text-transform: uppercase;
   color: #25282b;
 }
-html body.app .main .grid.highlight .article.special .article-item.blog .article-container .article-author .author-title {
+html body.app .main.desktop .grid.highlight .article.special .article-item.blog .article-container .article-author .author-title {
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
   color: #828282;
 }
-html body.app .main .grid.highlight .article.special .article-container {
+html body.app .main.desktop .grid.highlight .article.special .article-container {
   display: grid;
   grid-template-columns: calc(100% - 104px) 88px;
   grid-gap: 16px;
 }
-html body.app .main .grid.highlight .article.special .article-category {
+html body.app .main.desktop .grid.highlight .article.special .article-category {
   margin: 0 0 10px 0;
 }
-html body.app .main .grid.highlight .article.special .article-category a {
+html body.app .main.desktop .grid.highlight .article.special .article-category a {
   line-height: 0;
 }
-html body.app .main .grid.highlight .article.special .article-title {
+html body.app .main.desktop .grid.highlight .article.special .article-title {
   margin: 0;
   font-size: 15px;
   line-height: 20px;
 }
-html body.app .main .grid.highlight .article.special .article-meta {
+html body.app .main.desktop .grid.highlight .article.special .article-meta {
   margin: 8px 0 0;
   display: flex;
   align-items: center;
@@ -259,14 +259,14 @@ html body.app .main .grid.highlight .article.special .article-meta {
   line-height: 17px;
   font-weight: 400;
 }
-html body.app .main .grid.highlight .article.special .article-avatar {
+html body.app .main.desktop .grid.highlight .article.special .article-avatar {
   display: flex;
   flex-wrap: wrap;
   margin: -4px -2px 0;
   align-items: center;
   justify-content: center;
 }
-html body.app .main .grid.highlight .article.special .article-avatar a {
+html body.app .main.desktop .grid.highlight .article.special .article-avatar a {
   margin: 4px 0 0;
   flex: 0 0 auto;
   max-width: 100%;
@@ -276,7 +276,7 @@ html body.app .main .grid.highlight .article.special .article-avatar a {
   justify-content: center;
   padding: 0 2px;
 }
-html body.app .main .grid.highlight .article.special .article-avatar i {
+html body.app .main.desktop .grid.highlight .article.special .article-avatar i {
   display: block;
   width: 76px;
   height: 76px;
@@ -284,44 +284,44 @@ html body.app .main .grid.highlight .article.special .article-avatar i {
   overflow: hidden;
   background: transparent url(https://cdnweb.dantri.com.vn/dist/b474c6ca2d1abee5b89b.png) no-repeat center/100% 100%;
 }
-html body.app .main .grid.highlight .article.special .article-avatar.multi a {
+html body.app .main.desktop .grid.highlight .article.special .article-avatar.multi a {
   width: 50%;
 }
-html body.app .main .grid.highlight .article.special .article-avatar.multi i {
+html body.app .main.desktop .grid.highlight .article.special .article-avatar.multi i {
   width: 36px;
   height: 36px;
 }
-html body.app .main .grid.highlight .article.special .article-comment {
+html body.app .main.desktop .grid.highlight .article.special .article-comment {
   color: #28af4c;
 }
-html body.app .main .grid.highlight .article.grid {
+html body.app .main.desktop .grid.highlight .article.grid {
   display: grid;
   grid-template-columns: calc(100% - 293px) 252px;
   grid-row-gap: 20px;
   grid-column-gap: 41px;
   position: relative;
 }
-html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) {
+html body.app .main.desktop .grid.highlight .article.grid .article-item:nth-child(1) {
   grid-row-start: 1;
   grid-row-end: 3;
 }
-html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) .article-content {
+html body.app .main.desktop .grid.highlight .article.grid .article-item:nth-child(1) .article-content {
   margin: 14px 0 0;
 }
-html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) .article-title {
+html body.app .main.desktop .grid.highlight .article.grid .article-item:nth-child(1) .article-title {
   margin: 0;
   font-size: 21px;
   line-height: 30px;
 }
-html body.app .main .grid.highlight .article.grid .article-item:nth-child(1) .article-excerpt {
+html body.app .main.desktop .grid.highlight .article.grid .article-item:nth-child(1) .article-excerpt {
   margin: 9px 0 0;
 }
-html body.app .main .grid.highlight .article.grid .article-item:not(:nth-child(1)) .article-title {
+html body.app .main.desktop .grid.highlight .article.grid .article-item:not(:nth-child(1)) .article-title {
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 22px;
 }
-html body.app .main .grid.highlight .article.column {
+html body.app .main.desktop .grid.highlight .article.column {
   margin: 20px 0 0;
   padding: 24px 0 0;
   border-top: 1px solid #eee;
@@ -329,12 +329,12 @@ html body.app .main .grid.highlight .article.column {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 18px;
 }
-html body.app .main .grid.highlight .article.column .article-title {
+html body.app .main.desktop .grid.highlight .article.column .article-title {
   margin: 12px 0 0;
   font-size: 14px;
   line-height: 20px;
 }
-html body.app .main .grid.normal {
+html body.app .main.desktop .grid.normal {
   margin: 22px 0 0;
   padding: 32px 0 0;
   border-top: 1px solid #eee;
@@ -342,79 +342,79 @@ html body.app .main .grid.normal {
   grid-template-columns: calc(100% - 601px) 552px;
   grid-gap: 49px;
 }
-html body.app .main .grid.normal .article-list .article-item {
+html body.app .main.desktop .grid.normal .article-list .article-item {
   display: grid;
   grid-template-columns: 233px calc(100% - 249px);
   grid-gap: 16px;
 }
-html body.app .main .grid.normal .article-list .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.normal .article-list .article-item:not(:nth-child(1)) {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #f1f1f1;
 }
-html body.app .main .grid.normal .article-list .article-title {
+html body.app .main.desktop .grid.normal .article-list .article-title {
   margin: 0;
   font-size: 18px;
   line-height: 25px;
 }
-html body.app .main .grid.normal .article-list .article-excerpt {
+html body.app .main.desktop .grid.normal .article-list .article-excerpt {
   margin-top: 8px;
 }
-html body.app .main .grid.normal .article-list .article-excerpt a {
+html body.app .main.desktop .grid.normal .article-list .article-excerpt a {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-html body.app .main .grid.normal .article-list .grid {
+html body.app .main.desktop .grid.normal .article-list .grid {
   margin-top: 20px;
   padding-top: 20px;
 }
-html body.app .main .grid.normal .article-list .grid .article-container {
+html body.app .main.desktop .grid.normal .article-list .grid .article-container {
   margin: 16px 0 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
-html body.app .main .grid.normal .article-list .grid .article-item {
+html body.app .main.desktop .grid.normal .article-list .grid .article-item {
   display: block;
   grid-gap: 0;
   grid-template-columns: auto;
 }
-html body.app .main .grid.normal .article-list .grid .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.normal .article-list .grid .article-item:not(:nth-child(1)) {
   margin-top: 0;
   padding-top: 0;
   border-top: 0;
 }
-html body.app .main .grid.normal .article-list .grid .article-title {
+html body.app .main.desktop .grid.normal .article-list .grid .article-title {
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 22px;
 }
-html body.app .main .grid.normal .article-list .grid .title-head {
+html body.app .main.desktop .grid.normal .article-list .grid .title-head {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 600;
   text-transform: uppercase;
 }
-html body.app .main .grid.normal .article-list .grid.line-top {
+html body.app .main.desktop .grid.normal .article-list .grid.line-top {
   border-top: 1px solid #eee;
 }
-html body.app .main .grid.normal .article-list .grid.article-tttm {
+html body.app .main.desktop .grid.normal .article-list .grid.article-tttm {
   border-top: 3px solid #005baa;
 }
-html body.app .main .grid.normal .article-list .grid.article-tttm .title-head {
+html body.app .main.desktop .grid.normal .article-list .grid.article-tttm .title-head {
   color: #005baa;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-html body.app .main .grid.normal .article-list .grid.article-tttm .title-head a {
+html body.app .main.desktop .grid.normal .article-list .grid.article-tttm .title-head a {
   color: #005baa;
 }
-html body.app .main .grid.normal .article-list .grid.article-tttm .btn-tttm {
+html body.app .main.desktop .grid.normal .article-list .grid.article-tttm .btn-tttm {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -430,10 +430,10 @@ html body.app .main .grid.normal .article-list .grid.article-tttm .btn-tttm {
   border-radius: 16px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
-html body.app .main .grid.normal .category {
+html body.app .main.desktop .grid.normal .category {
   position: relative;
 }
-html body.app .main .grid.normal .category::before {
+html body.app .main.desktop .grid.normal .category::before {
   content: "";
   display: block;
   position: absolute;
@@ -443,63 +443,63 @@ html body.app .main .grid.normal .category::before {
   height: 100%;
   border-left: 1px solid #eee;
 }
-html body.app .main .grid.normal .category .article-item:nth-child(1) {
+html body.app .main.desktop .grid.normal .category .article-item:nth-child(1) {
   grid-row-start: 1;
   grid-row-end: 5;
 }
-html body.app .main .grid.normal .category .article-item:nth-child(1) .article-title {
+html body.app .main.desktop .grid.normal .category .article-item:nth-child(1) .article-title {
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 22px;
 }
-html body.app .main .grid.normal .category .article-item:nth-child(1) .article-excerpt {
+html body.app .main.desktop .grid.normal .category .article-item:nth-child(1) .article-excerpt {
   margin: 8px 0 0;
   font-size: 13px;
   line-height: 20px;
 }
-html body.app .main .grid.normal .category .article-item:nth-child(1) .article-excerpt a {
+html body.app .main.desktop .grid.normal .category .article-item:nth-child(1) .article-excerpt a {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.normal .category .article-item:not(:nth-child(1)) {
   display: grid;
   grid-template-columns: calc(100% - 102px) 90px;
   grid-gap: 12px;
 }
-html body.app .main .grid.normal .category .article-item:not(:nth-child(1)):not(:nth-child(2)) {
+html body.app .main.desktop .grid.normal .category .article-item:not(:nth-child(1)):not(:nth-child(2)) {
   padding-top: 12px;
   border-top: 1px solid #eee;
 }
-html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb {
+html body.app .main.desktop .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb {
   order: 2;
 }
-html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb img {
+html body.app .main.desktop .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb img {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb a {
+html body.app .main.desktop .grid.normal .category .article-item:not(:nth-child(1)) .article-thumb a {
   position: relative;
   line-height: 0;
   display: block;
   padding: 0 0 66.666666%;
   overflow: hidden;
 }
-html body.app .main .grid.normal .category .article-item:not(:nth-child(1)) .article-title {
+html body.app .main.desktop .grid.normal .category .article-item:not(:nth-child(1)) .article-title {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
 }
-html body.app .main .grid.normal .category-head {
+html body.app .main.desktop .grid.normal .category-head {
   display: flex;
   align-items: center;
 }
-html body.app .main .grid.normal .category-head .title {
+html body.app .main.desktop .grid.normal .category-head .title {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -508,34 +508,34 @@ html body.app .main .grid.normal .category-head .title {
   color: #0f6c32;
   margin: 0;
 }
-html body.app .main .grid.normal .category-head .title a {
+html body.app .main.desktop .grid.normal .category-head .title a {
   color: #0f6c32;
 }
-html body.app .main .grid.normal .category-head .title a:hover {
+html body.app .main.desktop .grid.normal .category-head .title a:hover {
   color: #06c;
 }
-html body.app .main .grid.normal .category-nav {
+html body.app .main.desktop .grid.normal .category-nav {
   margin: 0 0 0 24px;
   padding: 0;
   list-style: none;
   display: flex;
   align-items: center;
 }
-html body.app .main .grid.normal .category-nav li:not(:nth-child(1)) {
+html body.app .main.desktop .grid.normal .category-nav li:not(:nth-child(1)) {
   margin-left: 20px;
 }
-html body.app .main .grid.normal .category-nav li a {
+html body.app .main.desktop .grid.normal .category-nav li a {
   color: #828282;
 }
-html body.app .main .grid.normal .category-nav li a:hover {
+html body.app .main.desktop .grid.normal .category-nav li a:hover {
   color: #06c;
 }
-html body.app .main .grid.normal .category-wrap.line {
+html body.app .main.desktop .grid.normal .category-wrap.line {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 4px solid #f1f1f1;
 }
-html body.app .main .grid.normal .category-container {
+html body.app .main.desktop .grid.normal .category-container {
   margin: 16px 0 0;
   display: grid;
   grid-template-columns: 192px calc(100% - 233px);
@@ -543,7 +543,7 @@ html body.app .main .grid.normal .category-container {
   grid-column-gap: 41px;
   position: relative;
 }
-html body.app .main .grid.normal .category-container::before {
+html body.app .main.desktop .grid.normal .category-container::before {
   content: "";
   display: block;
   position: absolute;
@@ -553,7 +553,7 @@ html body.app .main .grid.normal .category-container::before {
   height: 100%;
   border-left: 1px solid #eee;
 }
-html body.app .main .grid.normal .poll {
+html body.app .main.desktop .grid.normal .poll {
   margin: 24px 0 0;
   padding: 24px 0 0;
   border-top: 4px solid #f1f1f1;
@@ -561,33 +561,33 @@ html body.app .main .grid.normal .poll {
   grid-template-columns: calc(100% - 312px) 300px;
   grid-gap: 12px;
 }
-html body.app .main .grid.list {
+html body.app .main.desktop .grid.list {
   margin: 32px 0 0;
   display: grid;
   grid-template-columns: calc(100% - 380px) 300px;
   grid-gap: 80px;
 }
-html body.app .main .grid.list .article.list .article-item {
+html body.app .main.desktop .grid.list .article.list .article-item {
   display: grid;
   grid-template-columns: 250px calc(100% - 270px);
   grid-gap: 20px;
 }
-html body.app .main .grid.list .article.list .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.list .article.list .article-item:not(:nth-child(1)) {
   margin: 27px 0 0;
 }
-html body.app .main .grid.list .article.list .article-title {
+html body.app .main.desktop .grid.list .article.list .article-title {
   margin: 0;
   font-size: 20px;
   line-height: 28px;
 }
-html body.app .main .grid.list .article.list .article-excerpt {
+html body.app .main.desktop .grid.list .article.list .article-excerpt {
   margin: 6px 0 0;
 }
-html body.app .main .grid.list .article.sidebar {
+html body.app .main.desktop .grid.list .article.sidebar {
   padding: 14px 0 0;
   border-top: 1px solid #eee;
 }
-html body.app .main .grid.list .article.sidebar .title {
+html body.app .main.desktop .grid.list .article.sidebar .title {
   margin: 0 0 24px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 16px;
@@ -596,12 +596,12 @@ html body.app .main .grid.list .article.sidebar .title {
   text-transform: uppercase;
   color: #222;
 }
-html body.app .main .grid.list .article.sidebar .article-item:nth-child(2) .article-title {
+html body.app .main.desktop .grid.list .article.sidebar .article-item:nth-child(2) .article-title {
   margin: 16px 0 0;
   font-size: 18px;
   line-height: 25px;
 }
-html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) {
+html body.app .main.desktop .grid.list .article.sidebar .article-item:not(:nth-child(2)) {
   margin: 20px 0 0;
   padding: 20px 0 0;
   border-top: 1px solid #eee;
@@ -609,52 +609,52 @@ html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2))
   grid-template-columns: calc(100% - 104px) 90px;
   grid-gap: 14px;
 }
-html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb {
+html body.app .main.desktop .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb {
   order: 2;
 }
-html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb img {
+html body.app .main.desktop .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb img {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb a {
+html body.app .main.desktop .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-thumb a {
   position: relative;
   line-height: 0;
   display: block;
   padding: 0 0 66.666666%;
   overflow: hidden;
 }
-html body.app .main .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-title {
+html body.app .main.desktop .grid.list .article.sidebar .article-item:not(:nth-child(2)) .article-title {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
 }
-html body.app .main .grid.list .article.grid {
+html body.app .main.desktop .grid.list .article.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 22px;
 }
-html body.app .main .grid.list .article.grid .article-item {
+html body.app .main.desktop .grid.list .article.grid .article-item {
   display: block;
   grid-template-columns: 100%;
   grid-gap: 0;
 }
-html body.app .main .grid.list .article.grid .article-item:not(:nth-child(1)) {
+html body.app .main.desktop .grid.list .article.grid .article-item:not(:nth-child(1)) {
   margin: 0;
 }
-html body.app .main .grid.list .article.grid .article-title {
+html body.app .main.desktop .grid.list .article.grid .article-title {
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 22px;
 }
-html body.app .main .grid.list .article .native-wrap {
+html body.app .main.desktop .grid.list .article .native-wrap {
   margin: 27px 0 0;
   padding: 27px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
-html body.app .main .grid.list .pagination {
+html body.app .main.desktop .grid.list .pagination {
   margin: 29px 0 0;
   padding: 21px 0 0;
   border-top: 1px solid #eee;
@@ -662,7 +662,7 @@ html body.app .main .grid.list .pagination {
   align-items: center;
   justify-content: center;
 }
-html body.app .main .grid.list .pagination .page-item {
+html body.app .main.desktop .grid.list .pagination .page-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -676,18 +676,282 @@ html body.app .main .grid.list .pagination .page-item {
   font-weight: 500;
   font-size: 16px;
 }
-html body.app .main .grid.list .pagination .page-item:not(:first-child) {
+html body.app .main.desktop .grid.list .pagination .page-item:not(:first-child) {
   margin-left: 8px;
 }
-html body.app .main .grid.list .pagination .page-item:hover {
+html body.app .main.desktop .grid.list .pagination .page-item:hover {
   background: #0f6c32 none;
   border: 1px solid #0f6c32;
   color: #fff;
 }
-html body.app .main .grid.list .pagination .page-item.active {
+html body.app .main.desktop .grid.list .pagination .page-item.active {
   background: #0f6c32 none;
   border: 1px solid #0f6c32;
   color: #fff;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-title .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: NotoSerif-Bold, sans-serif;
+}
+html body.app .main.desktop .wrapper .detail-main .line-datetime {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+html body.app .main.desktop .wrapper .detail-main .line-datetime > span {
+  font-size: 12px;
+  color: #6c6e70;
+}
+html body.app .main.desktop .wrapper .detail-main .line-datetime > span i {
+  margin-bottom: -1px;
+}
+html body.app .main.desktop .wrapper .detail-main [data-role=sapo] {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: normal;
+  font-family: NotoSerif-Bold, sans-serif;
+  color: #6c6e70;
+  margin-bottom: 15px;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share {
+  display: flex;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share .fb-share-button {
+  margin-right: 5px;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share .btn-cmt {
+  display: inline;
+  border-radius: 3px;
+  background: #8b9ba7;
+  height: 20px;
+  color: #fff;
+  font: normal 12px/20px Arial;
+  padding: 0 7px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share .btn-cmt svg {
+  display: inline-block;
+  margin-right: 3px;
+  margin-bottom: -0.5px;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share .btn-cmt .numcountcmt {
+  padding-left: 5px;
+  margin-left: 2.5px;
+  border-left: thin solid #bbb;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share .mail {
+  height: 20px;
+  margin-left: auto;
+}
+html body.app .main.desktop .wrapper .detail-main .line-share .mail .share-mail {
+  display: inline-block;
+  background: url(https://static.mediacdn.vn/danviet/web_images/danviet_sprite.png) no-repeat -289px -171px;
+  background-size: 580px 564px;
+  width: 24px;
+  height: 19px;
+  border-radius: 3px;
+}
+html body.app .main.desktop .wrapper .detail-main .related-news {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+html body.app .main.desktop .wrapper .detail-main .related-news li {
+  color: #202124;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+}
+html body.app .main.desktop .wrapper .detail-main .related-news li:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+  margin-right: 10px;
+  background: #008837;
+}
+html body.app .main.desktop .wrapper .detail-main .related-news li:last-child {
+  margin-bottom: 0;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content {
+  text-align: justify;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .image-avatar {
+  margin-bottom: 15px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .image-avatar .avatar-desc {
+  color: #80868b;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .author {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 500;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other {
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #f3f3f3;
+  margin: 25px 0;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items {
+  display: flex;
+  align-items: center;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items .fb-share-button {
+  margin-right: 5px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items .fb-like {
+  margin-right: 5px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items [class*=itemshare-] {
+  width: 20px;
+  height: 20px;
+  background-image: url(../web_images/sprite-socials.png);
+  background-repeat: no-repeat;
+  background-size: 62px;
+  margin-right: 5px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items .itemshare-twitter {
+  background-position: -21px 0;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items .itemshare-reddit {
+  background-position: 0 -21px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .share-other .share-items .itemshare-linked {
+  background-position: -42px 0;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .tag a {
+  color: #337ab7;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .tag .tags {
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .tag .tags .tags-title {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .tag .tags > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .tag .tags > ul li {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+html body.app .main.desktop .wrapper .detail-main .dt-content .tag .tags > ul li a {
+  display: block;
+  padding: 5px 12px;
+  border-radius: 12px;
+  background-color: #f3f3f3;
+  color: #80868b;
+}
+html body.app .main.desktop .wrapper .detail-main .box-related .related-news .item {
+  margin-top: 30px;
+  display: flex;
+}
+html body.app .main.desktop .wrapper .detail-main .box-related .related-news .item .img {
+  width: 90px;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+html body.app .main.desktop .wrapper .detail-main .box-related .related-news .item .title {
+  color: #00f;
+  margin-bottom: 5px;
+  font-size: 13px;
+  line-height: 19.5px;
+  font-weight: 700;
+}
+html body.app .main.desktop .wrapper .detail-main .box-related .related-news .item .time {
+  font-size: 12px;
+  color: #aaa;
+}
+html body.app .main.desktop .wrapper .detail-main .box-samecat .sc-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  color: #008837;
+  display: flex;
+}
+html body.app .main.desktop .wrapper .detail-main .box-samecat .samecat-news {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -13px;
+}
+html body.app .main.desktop .wrapper .detail-main .box-samecat .samecat-news .item {
+  width: 33.333%;
+  padding: 0 13px;
+  margin-bottom: 25px;
+}
+html body.app .main.desktop .wrapper .detail-main .box-samecat .samecat-news .item .img img {
+  width: 200px;
+  height: 110px;
+}
+html body.app .main.desktop .wrapper .detail-main .box-samecat .samecat-news .item .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 22px;
+}
+html body.app .main.desktop .wrapper .box-cmt {
+  margin: 20px 0;
+  border-bottom: 3px solid #eee;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight {
+  margin-bottom: 30px;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .hl-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-top: 3px solid #eee;
+  padding-top: 15px;
+  color: #008837;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .box-hightlight {
+  display: flex;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .box-hightlight .hightlight-big {
+  width: 425px;
+  flex-shrink: 0;
+  margin-right: 25px;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .box-hightlight .hightlight-big .item .img img {
+  width: 425px;
+  height: 235px;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .box-hightlight .hightlight-big .item .title {
+  margin: 12px 0 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .box-hightlight .hightlight-small .item .title {
+  font-size: 14px;
+  font-weight: 500;
+}
+html body.app .main.desktop .wrapper .detailnews-hightlight .box-hightlight .hightlight-small .item:not(:last-child) {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
 }
 html body.app .breadcrumb {
   display: flex;
@@ -791,6 +1055,15 @@ li {
   border: 0;
   font: inherit;
   vertical-align: baseline;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+}
+figure video {
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=app.desktop.css.map */
